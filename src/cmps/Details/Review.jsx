@@ -1,5 +1,4 @@
 export function Review({ review }) {
-	console.log(review);
 	return (
 		<div className='review'>
 			<div className='review-user-info flex'>

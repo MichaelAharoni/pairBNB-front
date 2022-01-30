@@ -36,8 +36,7 @@ export function DatePicker({ order, setOrder }) {
 			<LocalizationProvider dateAdapter={AdapterDateFns}>
 				<DateRangePicker
 					disablePast
-					clearable={true}
-					clearText={"Clear"}
+					className='date-picker-checkout'
 					calendars={mode}
 					value={[order.checkIn, order.checkOut]}
 					maxDate={getWeeksAfter(order.checkIn, 8)}
@@ -50,7 +49,6 @@ export function DatePicker({ order, setOrder }) {
 						<React.Fragment>
 							<TextField className={"start-date"} {...startProps} />
 							<TextField className={"end-date"} {...endProps} />
-							{/* <span>{removeUrl}</span> */}
 						</React.Fragment>
 					)}
 				/>

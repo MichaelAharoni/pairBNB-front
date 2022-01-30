@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { StayList } from "../cmps/Explore/StayList.jsx";
 import { AddStay } from "../cmps/BackOffice/AddStay.jsx";
@@ -8,6 +9,7 @@ import { HostTable, UserTable } from "../cmps/BackOffice/OrderTables";
 
 import { userService } from "../services/user.service";
 import { stayService } from "../services/stay.service";
+import { openMsg } from "../store/msg.action";
 
 import { styled } from "@mui/system";
 import TabsUnstyled from "@mui/base/TabsUnstyled";
@@ -78,6 +80,7 @@ const TabsList = styled(TabsListUnstyled)`
 `;
 
 export function _BackOffice({ stays, loadStays }) {
+	const dispatch = useDispatch();
 	const [hostStays, setHostStays] = useState([]);
 	const [likedStays, setLikedStays] = useState([]);
 	const history = useHistory();
@@ -98,7 +101,10 @@ export function _BackOffice({ stays, loadStays }) {
 		}
 	}, []);
 
-	if (!loggedInUser) return <React.Fragment> {history.push("/")}</React.Fragment>;
+	if (!loggedInUser) {
+		dispatch(openMsg({ txt: "Log in first", type: "bnb" }));
+		return <React.Fragment> {history.push("/")}</React.Fragment>;
+	}
 	return (
 		<div className='main-layout main-container'>
 			<TabsUnstyled className='middle-layout' defaultValue={0}>

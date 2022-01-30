@@ -40,7 +40,6 @@ export function Home() {
 
 	function searchCity(city) {
 		dispatch(setParams({ ...searchParams, location: city }));
-		console.log(searchParams);
 		window.scrollTo(0, 0);
 		history.push(`/explore/location=${city}`);
 	}

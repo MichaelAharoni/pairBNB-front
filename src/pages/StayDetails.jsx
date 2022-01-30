@@ -30,13 +30,11 @@ function _StayDetails({ toggleDetailsLayout }) {
 	const [avg, setAvg] = useState(0);
 	const [currUser, setCurrUser] = useState(userService.getLoggedinUser());
 	const isUserLikeCurrStay = currUser?.likedStays?.some((currStay) => currStay._id === stay?._id);
-	console.log(isUserLikeCurrStay);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
 		(async () => {
 			const stayByid = await stayService.getById(params.id);
-			console.log(stayByid);
 			getAvgRating(stayByid);
 			setStay(stayByid);
 			toggleDetailsLayout(true);

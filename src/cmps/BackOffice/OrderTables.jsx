@@ -201,9 +201,7 @@ export function UserTable() {
 	}, [currOrderClicked]);
 
 	function getPendingOrders(orders) {
-		console.log(orders);
 		const pending = orders.filter((order) => order[5] === "Pending");
-
 		return pending.length;
 	}
 

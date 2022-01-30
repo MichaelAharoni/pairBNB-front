@@ -18,7 +18,7 @@ export function ReviewStats({ reviews }) {
 			{avgStats.map((stat) => {
 				const currAvg = `${(stats[stat] / 5) * 100}%`;
 				return (
-					<div className='rating-container'>
+					<div key={stat} className='rating-container'>
 						{stat}
 						<div className='stat-container'>
 							<div className='stat-bar-container'>
