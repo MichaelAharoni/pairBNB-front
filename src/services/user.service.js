@@ -62,7 +62,7 @@ async function login(userCred) {
             try {
                 const user = await httpService.post('auth/login', userCred)
                 if (user) _saveLocalUser(user);
-                socketService.emit('join-room', user._id)
+                socketService.emit('socket-by-userId', user._id)
                 return resolve(user);
             }
             catch (err) {
@@ -95,7 +95,7 @@ async function signup(userCred) {
 async function logout() {
     sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
     await httpService.post('auth/logout')
-    return socketService.off('join-room')
+    return socketService.off('socket-by-userId')
 }
 
 
