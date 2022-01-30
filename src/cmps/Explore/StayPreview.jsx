@@ -47,24 +47,26 @@ function _StayPreview({ stay, fromBackOffice }) {
 
 	async function toggleLikedPlace(stay) {
 		let loggedinUser = userService.getLoggedinUser();
+		console.log(loggedinUser);
 		// USER MSG - ask guest to log in / up / continue as guest for demo purposes
 		if (!loggedinUser) return dispatch(openMsg({ txt: "Log in first", type: "bnb" }));
-		let likedStay = loggedinUser.likedStays.find((currStay) => {
+		let likedStays = loggedinUser.likedStays.find((currStay) => {
 			return currStay._id === stay._id;
 		});
-		if (likedStay) {
+		if (likedStays) {
 			loggedinUser.likedStays = loggedinUser.likedStays.filter((currStay) => {
-				return currStay._id !== likedStay._id;
+				return currStay._id !== likedStays._id;
 			});
 		} else {
 			const miniStay = { _id: stay._id, name: stay.name };
 			loggedinUser.likedStays.push(miniStay);
 		}
-		const userTosave = await userService.getById(loggedinUser._id);
-		userTosave.likedStay = loggedinUser.likedStay;
-		const newUser = await userService.update(userTosave);
-		delete newUser.password;
-		dispatch(openMsg({ txt: likedStay ? "Stay unliked" : "Stay liked", type: "bnb" }));
+		console.log(loggedinUser.likedStays);
+		const userToSave = await userService.getById(loggedinUser._id);
+		userToSave.likedStays = loggedinUser.likedStays;
+		const newUser = await userService.update(userToSave);
+		console.log(newUser);
+		dispatch(openMsg({ txt: likedStays ? "Stay unliked" : "Stay liked", type: "bnb" }));
 		setCurrUser({ ...newUser });
 		userService.setLoggedinUser(newUser);
 	}

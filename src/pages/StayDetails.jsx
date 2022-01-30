@@ -49,21 +49,21 @@ function _StayDetails({ toggleDetailsLayout }) {
 	async function onToggleLikedPlace(stay) {
 		let loggedinUser = userService.getLoggedinUser();
 		if (!loggedinUser) return dispatch(openMsg({ txt: "Log in first", type: "bnb" }));
-		let likedStay = loggedinUser.likedStays.find((currStay) => {
+		let likedStays = loggedinUser.likedStays.find((currStay) => {
 			return currStay._id === stay._id;
 		});
-		if (likedStay) {
+		if (likedStays) {
 			loggedinUser.likedStays = loggedinUser.likedStays.filter((currStay) => {
-				return currStay._id !== likedStay._id;
+				return currStay._id !== likedStays._id;
 			});
 		} else {
 			const miniStay = { _id: stay._id, name: stay.name };
 			loggedinUser.likedStays.push(miniStay);
 		}
 		const userToSave = await userService.getById(loggedinUser._id);
-		userToSave.likedStay = loggedinUser.likedStay;
+		userToSave.likedStays = loggedinUser.likedStays;
 		const newUser = await userService.update(userToSave);
-		dispatch(openMsg({ txt: likedStay ? "Stay unliked" : "Stay liked", type: "bnb" }));
+		dispatch(openMsg({ txt: likedStays ? "Stay unliked" : "Stay liked", type: "bnb" }));
 		setCurrUser({ ...newUser });
 		userService.setLoggedinUser(newUser);
 	}
