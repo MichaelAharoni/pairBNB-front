@@ -22,25 +22,25 @@ export function _PlaceTypeFilter({ sortByType, filterBy, stayPrice, searchParams
 				<FormControl sx={{ m: 3 }} component='fieldset' variant='standard'>
 					<FormGroup className='place-type-filter'>
 						<FormControlLabel
-							control={<Checkbox style={{ color: "#FF385C" }} className='type-header' checked={stayType["Entire place"]} onChange={handleChange} name='Entire place' />}
+							control={<Checkbox style={{ color: "#222222" }} className='type-header' checked={stayType["Entire place"]} onChange={handleChange} name='Entire place' />}
 							label='Entire place'
 						/>
 						<FormHelperText className='type-text'>Have a place to yourself</FormHelperText>
 
 						<FormControlLabel
-							control={<Checkbox style={{ color: "#FF385C" }} className='type-header' checked={stayType["Hotel room"]} onChange={handleChange} name='Hotel room' />}
+							control={<Checkbox style={{ color: "#222222" }} className='type-header' checked={stayType["Hotel room"]} onChange={handleChange} name='Hotel room' />}
 							label='Hotel room'
 						/>
 						<FormHelperText className='type-text'>Have a private or shared room in a boutique hotel, hostel, and more</FormHelperText>
 
 						<FormControlLabel
-							control={<Checkbox style={{ color: "#FF385C" }} className='type-header' checked={stayType["Private room"]} onChange={handleChange} name='Private room' />}
+							control={<Checkbox style={{ color: "#222222" }} className='type-header' checked={stayType["Private room"]} onChange={handleChange} name='Private room' />}
 							label='Private room'
 						/>
 						<FormHelperText className='type-text'>Have your own room and share some common spaces</FormHelperText>
 
 						<FormControlLabel
-							control={<Checkbox style={{ color: "#FF385C" }} className='type-header' checked={stayType["Shared room"]} onChange={handleChange} name='Shared room' />}
+							control={<Checkbox style={{ color: "#222222" }} className='type-header' checked={stayType["Shared room"]} onChange={handleChange} name='Shared room' />}
 							label='Shared room'
 						/>
 						<FormHelperText className='type-text'>Stay in shared space, like a common room </FormHelperText>

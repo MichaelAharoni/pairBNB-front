@@ -36,6 +36,8 @@ export function DatePicker({ order, setOrder }) {
 			<LocalizationProvider dateAdapter={AdapterDateFns}>
 				<DateRangePicker
 					disablePast
+					clearable={true}
+					clearText={"Clear"}
 					calendars={mode}
 					value={[order.checkIn, order.checkOut]}
 					maxDate={getWeeksAfter(order.checkIn, 8)}

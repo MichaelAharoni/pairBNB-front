@@ -65,6 +65,11 @@
 		border: none;
 		border-radius: 13px;
 		outline: none;
+		color: $clr6;
+		padding-top: 13px;
+		box-sizing: border-box;
+		padding-top: 35px;
+		padding-bottom: 20px;
 	}
 
 	fieldset {
@@ -73,20 +78,23 @@
 	.start-date {
 		border-inline-end: 1px solid #00000030;
 	}
-	.end-date {
-		// border-inline-end: 1px solid #00000030;
-	}
 
 	label {
 		font-weight: 600;
 		font-size: 0.75em;
 	}
-	.MuiInputLabel-shrink {
-		transform: translate(20%, -85%);
-		color: $clr1 !important;
+	.guest-input-container {
+		justify-content: space-between;
+		img {
+			opacity: 0.5;
+			height: 32px;
+			width: 32px;
+		}
 	}
-	// MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-rootMuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root
-	// MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-focused css-1sumxir-MuiFormLabel-root-MuiInputLabel-root
+	.MuiInputLabel-shrink {
+		transform: translate(26%, 23%);
+		color: #717171 !important;
+	}
 
 	span.cost {
 		color: $clr6;

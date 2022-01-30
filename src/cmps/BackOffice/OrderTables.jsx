@@ -129,7 +129,7 @@ export function HostTable() {
 	const tableHeader = (
 		<div className='table-header'>
 			<h2>
-				Hi {loggedinUser.fullName}, your have {getPendingOrders(myOrders)} pending orders
+				Hi {loggedinUser.fullName}, you have {getPendingOrders(myOrders)} pending orders
 			</h2>
 			<div>
 				<div className='orders-types flex'>
@@ -231,12 +231,12 @@ export function UserTable() {
 	const tableHeader = (
 		<div className='table-header'>
 			<h3>
-				Hi {loggedinUser.fullName}, your have {getPendingOrders(myOrders)} pending trips
+				Hi {loggedinUser.fullName}, you have {getPendingOrders(myOrders)} pending trips
 			</h3>
 			{getPendingOrders(myOrders) > 0 && <p>Our hosts will respond to your pending trips soon</p>}
 			<div>
 				<div className='orders-types flex'>
-					<div>Trips::</div>
+					<div>Trips:</div>
 					<span>
 						{getOrderTypes(myOrders, "Approved")}
 						<div style={{ backgroundColor: "#9df89d" }} className='orders-ball'></div>

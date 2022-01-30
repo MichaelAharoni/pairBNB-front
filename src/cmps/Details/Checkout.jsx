@@ -14,6 +14,9 @@ import { setParams } from "../../store/stay.action";
 import { updateUserNotifications } from "../../store/user.action";
 
 import reviewStar from "../../styles/svg/star.svg";
+import downArrow from "../../styles/svg/arrows/down-arrow.svg";
+import upArrow from "../../styles/svg/arrows/up-arrow.svg";
+
 import { differenceInSeconds } from "date-fns";
 
 export function Checkout({ stay, avg }) {
@@ -98,8 +101,11 @@ export function Checkout({ stay, avg }) {
 
 					<div onClick={onToggleGuests} className='guest-input'>
 						<label>guests</label>
-						<div>
-							{order.guestsCount} {order.guestsCount > 1 ? "guests" : "guest"}
+						<div className='guest-input-container flex'>
+							<div>
+								{order.guestsCount} {order.guestsCount > 1 ? "guests" : "guest"}
+							</div>
+							{isGuestsActive ? <img src={upArrow} /> : <img src={downArrow} />}
 						</div>
 					</div>
 				</div>

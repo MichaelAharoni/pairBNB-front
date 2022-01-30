@@ -56,7 +56,7 @@ export function Home() {
 					</button>
 				</Link>
 			</section>
-			<h1 className='middle-layout cities-title'>Popular cities around the word.</h1>
+			<h1 className='middle-layout cities-title'>Popular cities around the world</h1>
 			<section className='popular-cities middle-layout'>
 				<article onClick={() => searchCity("Paris")} className='city-container'>
 					<img src={parisImg} alt='City Img' />
@@ -77,7 +77,8 @@ export function Home() {
 			</section>
 			<section className='host middle-layout'>
 				<img src={hostImg} alt='Host Img' />
-				<h1 className='host-title'>Become a host.</h1>
+				<div className='gradient'></div>
+				<h1 className='host-title'>Become a host</h1>
 				<Link to={"/host"}>
 					<button className='host-btn home-btn'>
 						<span>Start Here</span>
