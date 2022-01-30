@@ -20,6 +20,8 @@ import { SpecialBtn } from "../../General/SpecialBtn";
 import { updateInputsErrorInfo } from "../../../store/user.action";
 import apiKeys from "../../../api-key.json";
 
+const URL = process.env.NODE_ENV === "production" ? "https://pair-b-n-b.herokuapp.com/user/login" : "//localhost:3030/user/login";
+
 const theme = createTheme({
 	palette: {
 		primary: {
@@ -149,7 +151,7 @@ export function LogIn({ setIsSubmitting, signingIn }) {
 
 						<GoogleLogin
 							scope='profile email'
-							redirect_uri='https://pair-b-n-b.herokuapp.com/user/login'
+							redirect_uri={URL}
 							clientId={apiKeys.googleAuth}
 							buttonText='Login with Google acccount'
 							onSuccess={responseGoogle}
