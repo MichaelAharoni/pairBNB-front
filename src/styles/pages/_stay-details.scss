@@ -246,6 +246,15 @@
 	.share-save {
 		padding-inline-end: 10px;
 	}
+	.amenitie-item {
+		align-items: center;
+		display: flex;
+		font-size: 1.3rem !important;
+		line-height: 1;
+		img {
+			transform: translateY(20%) !important;
+		}
+	}
 }
 
 @media screen and (max-width: 880px) {
@@ -258,9 +267,7 @@
 	.css-1ozefeb {
 		left: 50px !important;
 	}
-}
 
-@media screen and (max-width: 780px) {
 	.stay-info-container {
 		display: flex;
 		flex-direction: column;
