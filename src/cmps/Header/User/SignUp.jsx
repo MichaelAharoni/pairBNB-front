@@ -142,7 +142,7 @@ export function SignUp({ setIsSubmitting, signingUp }) {
 						</button>
 						<GoogleLogin
 							scope='profile email'
-							redirect_uri='https://localhost:3000/user/login'
+							redirect_uri='https://pair-b-n-b.herokuapp.com/user/login'
 							clientId={apiKeys.googleAuth}
 							buttonText='Login with Google acccount'
 							onSuccess={responseGoogle}
