@@ -43,7 +43,6 @@ export function SignUp({ setIsSubmitting, signingUp }) {
 			imgUrl: response.picture.data.url,
 			isSocial: true,
 		};
-		signingUp(credentials);
 		setIsSubmitting(true);
 		setTimeout(async () => {
 			try {
