@@ -17,6 +17,15 @@
 	}
 }
 
+.explore-screen.screen-open {
+	opacity: 0%;
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	left: 0;
+	top: 0;
+}
+
 .sort-stays-seperator {
 	width: 100%;
 	position: absolute;

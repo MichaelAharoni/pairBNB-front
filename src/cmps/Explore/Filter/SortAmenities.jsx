@@ -20,6 +20,7 @@ export function _SortAmenities({ sortByAmenities, stayType, stayPrice, stays }) 
     })
     const [placeType, toggleTypeSearch] = useState()
     const [isPriceFilter, togglePriceFilter] = useState()
+	const [isExploreScreenOpen, setIsExploreScreenOpen] = useState(false);
 
     useEffect(() => {
         sortByAmenities(stays, filterBy, stayType, stayPrice)
@@ -29,21 +30,31 @@ export function _SortAmenities({ sortByAmenities, stayType, stayPrice, stays }) 
     }, [placeType])
 
     function togglePrice() {
-        togglePriceFilter(!isPriceFilter)
+        setIsExploreScreenOpen(true);
         toggleTypeSearch(false)
+        togglePriceFilter(!isPriceFilter)
     }
-
+    
     function togglePlaces() {
         toggleTypeSearch(!placeType)
         togglePriceFilter(false)
+        setIsExploreScreenOpen(true);
+    }
+
+    function handleExplorFilterScreenClosing() {
+        setIsExploreScreenOpen(false);
+        toggleTypeSearch(false);
+        togglePriceFilter(false);
+
     }
 
     return (<div className="filter-container middle-layout">
+			<div onClick={handleExplorFilterScreenClosing} className={isExploreScreenOpen ? "screen explore-screen screen-open full-layout" : "screen explore-screen full-layout"}></div>
         <div className="filter-dropdowns-container">
             <button className="filter-btn" onClick={() => { togglePrice() }} >{isPriceFilter ? <span className="flex"><span>Price </span><img className="filter-arrow" src={upArrow} /></span> : <span className="flex"><span>Price: ${stayPrice.minPrice}-{stayPrice.maxPrice}</span><img className="filter-arrow" src={downArrow} /></span>}</button>
-            {isPriceFilter && <PriceSlider />}
+            {(isPriceFilter && isExploreScreenOpen) && <PriceSlider />}
             <button className="filter-btn" onClick={() => { togglePlaces() }} >{placeType ? <span className="flex"><span>Type of place </span><img className="filter-arrow" src={upArrow} /></span> : <span className="flex"><span>Type of place </span><img className="filter-arrow" src={downArrow} /></span>}</button>
-            {placeType && <PlaceTypeFilter />}
+            {(placeType && isExploreScreenOpen) && <PlaceTypeFilter />}
         </div>
         <button className={filterBy["Wifi"] ? "filter-btn-active" : "filter-btn"} onClick={() => { setFilter({ ...filterBy, "Wifi": !filterBy["Wifi"] }) }}>Wifi</button>
         <button className={filterBy["TV"] ? "filter-btn-active" : "filter-btn"} onClick={() => { setFilter({ ...filterBy, "TV": !filterBy["TV"] }) }}>TV</button>
