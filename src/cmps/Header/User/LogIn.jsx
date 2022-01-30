@@ -58,6 +58,7 @@ export function LogIn({ setIsSubmitting, signingIn }) {
 	};
 
 	const responseGoogle = (response) => {
+		console.log(response);
 		const credentials = {
 			fullName: response.profileObj.name,
 			email: response.profileObj.email,
