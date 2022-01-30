@@ -45,7 +45,6 @@ export function AddReview({ stay, set }) {
 
 		set({ ...newStay });
 		dispatch(openMsg({ txt: "Review added", type: "bnb" }));
-		console.log(updatedStay);
 	}
 
 	const theme = createTheme({
@@ -89,17 +88,15 @@ export function AddReview({ stay, set }) {
 }
 
 function RatingBar(type, idx, value, setValue) {
-	// const [value, setValue] = React.useState(5);
 	const [hover, setHover] = React.useState(-1);
 
 	function setnewValue() {
 		value[idx] = hover;
 		setValue([...value]);
-		console.log(value);
 	}
 
 	return (
-		<div className='bar-container'>
+		<div key={idx} className='bar-container'>
 			<span className='rating-bar-header'>{type}</span>
 			<Rating
 				name='hover-feedback'
