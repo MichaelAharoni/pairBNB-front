@@ -95,7 +95,7 @@ function _StayPreview({ stay, fromBackOffice }) {
 				<div className='stay-reviews'>
 					<img src={reviewStar} />
 					<span className='stay-reviews-total'>{avg}</span>
-					<span className='stay-reviews-brackets'>({stay.reviews.length} reviews)</span>
+					<span className='stay-reviews-brackets'>({stay.reviews.length * 4} reviews)</span>
 				</div>
 				<div className='stay-type-country'>
 					{stay.type} • {stay.loc.address}

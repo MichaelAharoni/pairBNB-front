@@ -98,7 +98,7 @@ function _StayDetails({ toggleDetailsLayout }) {
 							<span className='avg-top-details'>{avg}</span>
 							<span className='dot-before-reviews'>·</span>
 							<a href='#reviews' className='reviews-count-details'>
-								{stay.reviews.length} reviews
+								{stay.reviews.length * 4} reviews
 							</a>
 							<span className='dot-before-address'>·</span>
 							<a href='#map' className='stay-location-href'>
@@ -185,7 +185,7 @@ function _StayDetails({ toggleDetailsLayout }) {
 				<div id='reviews' className='reviews-header flex'>
 					<img src={reviewStar} />
 					<span>{avg}</span>
-					<div>({stay.reviews.length} Reviews)</div>
+					<div>({stay.reviews.length * 4} Reviews)</div>
 				</div>
 
 				{stay.reviews.length > 0 && <ReviewStats reviews={stay.reviews} />}

@@ -87,7 +87,7 @@ export function Checkout({ stay, avg }) {
 							<img className='star-checkout' src={reviewStar} />
 						</span>
 						<span className='avg-checkout'> {avg} · </span>
-						<span className='reviews'>{stay.reviews.length} reviews</span>
+						<span className='reviews'>{stay.reviews.length * 4} reviews</span>
 					</p>
 				</div>
 

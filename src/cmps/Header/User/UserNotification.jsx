@@ -13,7 +13,7 @@ export function UserNotification() {
 
 	useEffect(() => {
 		socketService.setup();
-		if (loggedUser) socketService.emit("join-room", loggedUser._id);
+		if (loggedUser) socketService.emit("socket-by-userId", loggedUser._id);
 		socketService.on("recive-new-order", handleNewNotification);
 		socketService.on("response-to-guest", handleNewNotification);
 		return () => {

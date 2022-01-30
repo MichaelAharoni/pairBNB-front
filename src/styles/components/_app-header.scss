@@ -112,20 +112,20 @@
 	width: 80px;
 	padding: 0 6.5px;
 	position: relative;
-.user-notifications-dot {
-	background-color: $clr1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: absolute;
-	height: 20px;
-	width: 20px;
-	border-radius: 50%;
-	color: $clr2;
-	right: -2%;
-	top: -10%;
-	border: 1px solid $clr2;
-  }
+	.user-notifications-dot {
+		background-color: $clr1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		height: 20px;
+		width: 20px;
+		border-radius: 50%;
+		color: $clr2;
+		right: -2%;
+		top: -10%;
+		border: 1px solid $clr2;
+	}
 	&:hover {
 		box-shadow: 0px 2px 4px $clr5;
 	}
@@ -133,6 +133,8 @@
 
 .user-svg {
 	width: 31px;
+	height: 31px;
+	object-fit: cover;
 	box-shadow: inset 0px 0px 0px 3px #717171;
 	border-radius: 50%;
 }
@@ -142,14 +144,17 @@
 	height: 17px;
 }
 
-@media screen and (min-width:780px) {
+@media screen and (min-width: 780px) {
 	.active-header {
 		padding-block-end: 180px;
 	}
 }
 
-@media screen and (max-width:780px) {
-	.short-search-bar .search,.nav-link,.user-menu,.logo {
+@media screen and (max-width: 780px) {
+	.short-search-bar .search,
+	.nav-link,
+	.user-menu,
+	.logo {
 		display: none;
 	}
 
