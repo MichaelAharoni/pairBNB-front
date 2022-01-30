@@ -1,0 +1,68 @@
+[
+	{
+		"_id": "mongo301",
+		"hostId": "mongo002",
+		"createdAt": "mongo_id.getTimestemp",
+		"buyer": {
+			"_id": "mongo001",
+			"fullName": "Mosh Ben Ari"
+		},
+		"totalPrice": 760,
+		"startDate": "sunday",
+		"endDate": "tuesday",
+		"guests": {
+			"adults": 2,
+			"kids": 1
+		},
+		"stay": {
+			"_id": "mongo001",
+			"name": "Jaklino Riso",
+			"price": 380.0
+		},
+		"status": "approved"
+	},
+	{
+		"_id": "mongo302",
+		"hostId": "mongo103",
+		"createdAt": "mongo_id.getTimestemp",
+		"buyer": {
+			"_id": "mongo002",
+			"fullName": "Sharon Milevich"
+		},
+		"totalPrice": 730,
+		"startDate": "FRIDAY",
+		"endDate": "SUNDAY",
+		"guests": {
+			"adults": 4,
+			"kids": 0
+		},
+		"stay": {
+			"_id": "mongo003",
+			"name": "Sea of Galilee Panoramic View",
+			"price": 365.0
+		},
+		"status": "pending"
+	},
+	{
+		"_id": "mongo303",
+		"host_id": "mongo103",
+		"createdAt": "mongo_id.getTimestemp",
+		"buyer": {
+			"_id": "mongo001",
+			"fullName": "Mosh Ben Ari"
+		},
+		"totalPrice": 534,
+		"startDate": "monday",
+		"endDate": "friday",
+		"guests": {
+			"adults": 2,
+			"kids": 1
+		},
+		"stay": {
+			"_id": "mongo0015",
+			"name": "Magical Banna Cabana",
+			"price": 133.0
+		},
+		"status": "approved"
+	}
+]

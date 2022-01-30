@@ -1,0 +1,38 @@
+//setup
+@import "setup/mixins";
+@import "setup/variables";
+// @import "setup/functions.scss";
+@import "setup/typography.scss";
+@import "basics/base";
+//setup
+@import "setup/functions.scss";
+
+//basics
+@import "basics/layout";
+@import "basics/helpers";
+@import "basics/base";
+
+//components
+@import "components/app-header";
+@import "components/app-footer";
+@import "components/search";
+@import "components/search-bar";
+@import "components/stay-list.scss";
+@import "components/stay-preview.scss";
+@import "components/checkout";
+@import "components/loader";
+@import "components/sort-stay.scss";
+@import "components/place-type-filter.scss";
+@import "components/price-filter.scss";
+@import "components/carousel.scss";
+@import "components/user-modal.scss";
+@import "components/_search_bar_filter_input.scss";
+@import "components/review";
+@import "components/add-stay";
+@import "components/user-msg";
+
+//pages
+@import "pages/home";
+@import "pages/stay-details";
+@import "pages/explore";
+@import "pages/back-office";

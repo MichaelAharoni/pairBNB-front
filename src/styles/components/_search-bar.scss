@@ -1,0 +1,273 @@
+* {
+	margin: 0;
+}
+
+.bar {
+	border: 2px solid $clr5;
+	width: 850px;
+	background: $clr2;
+	height: 70px;
+	border-radius: 100vw;
+	display: flex;
+	justify-content: center;
+	font-size: 0.85rem;
+	align-items: center;
+	z-index: 100;
+	position: fixed;
+	transform: translateY(20%);
+	line-height: 20px;
+}
+
+.bar div.original {
+	border-radius: inherit;
+	padding: 0.8rem 1.5rem;
+	transition: background-color 250ms ease;
+	cursor: pointer;
+}
+
+.bar div.original:hover {
+	background-color: $clr5;
+}
+
+.bar div.original.active {
+	background: $clr2;
+	box-shadow: 5px 5px 50px 1px rgba(63, 63, 63, 0.404);
+	.header-guests {
+		opacity: 1;
+		padding: 0px 10px 10px 10px;
+		.guest-btn-container {
+			width: 100px;
+		}
+	}
+}
+
+.bar .guest-type {
+	div {
+		position: relative;
+		top: -5px;
+		width: 42%;
+	} 
+}
+
+.bar 
+.header-guests {
+	top: 30%;
+}
+
+.location {
+	height: inherit;
+	width: 100%;
+	& > * {
+		margin-inline-start: 5px;
+	}
+}
+.check-in,
+.check-out,
+.guests {
+	width: 22%;
+}
+
+.guest-type .guests-detail-txt-container {
+	display: flex;
+	flex-grow: 1;
+	margin-block-start: 10px;
+	justify-content: center;
+	flex-direction: column;
+	& > * {
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+		width: 100%;
+	}
+	& h3 {
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+		font-weight: 600;
+		line-height: 1;
+		// color: $clr1;
+	}
+	& p {
+		color: $clr6;
+		font-size: 12px;
+		margin: 0;
+	}
+}
+
+input[type="text"] {
+	background: none;
+	border: none;
+	padding: 0.2rem 0 0 0;
+}
+
+.bar .bar-input {
+	cursor: pointer;
+}
+
+input[type="text"]:focus {
+	outline: none;
+}
+
+::placeholder {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	font-size: 0.9rem;
+	font-weight: 400;
+}
+
+.search-bar-date-picker {
+	position: fixed;
+	top: 110%;
+	left: 11%;
+	border-radius: 25px;
+	overflow: hidden;
+}
+
+.bar > div.original {
+	position: relative;
+}
+
+.bar > div.original::before {
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 1px;
+	height: 55%;
+}
+
+.bar > div.original:nth-of-type(1)::before {
+	background: transparent;
+}
+
+.bar > hr {
+	border: 1px solid rgba(0, 0, 0, 0.103);
+	height: 30px;
+}
+
+.bar > div.original:hover::before {
+	background-color: transparent;
+}
+
+.bar > div.original:hover + hr {
+	visibility: hidden;
+}
+
+.bar > div.original.active + hr {
+	visibility: hidden;
+}
+
+.bar .special-btn {
+	position: absolute;
+	z-index: 0;
+	right: 3%;
+	top: 12%;
+	& img {
+		width: 50%;
+		transition: unset;
+		transform: translate(0.5px, 2px) rotate(-15deg);
+	}
+}
+
+.bar.active-search-bar {
+	background-color: $clr4;
+	.guests {
+		padding-inline-end: 230px;
+	}
+	.special-btn {
+		right: 2.5%;
+		& img {
+			width: 20%;
+			transform: translate(0.5px, 2px) rotate(-15deg);
+		}
+	}
+}
+
+.header-guests {
+	position: absolute;
+	transform: translate(-10%, 30%);
+	background-color: #fff;
+	width: 100%;
+	border-radius: 20px;
+	padding: 0 20px 10px;
+	// transition: opacity 0.5s;
+	// opacity: 0;
+}
+
+@media screen and (max-width: 1040px) {
+	.bar {
+		position: fixed;
+		left: 50%;
+		transform: translateX(-50%);
+		.check-in,
+		.check-out {
+			width: 18%;
+		}
+		width: 750px;
+		.guests {
+			width: 22%;
+		}
+	}
+}
+
+@media screen and (min-width: 780px) {
+	.bar {
+		top: 10%;
+	}
+}
+
+@media screen and (max-width: 780px) {
+	.bar {
+		margin-block-start: 15px;
+		&.active-search-bar .special-btn img {
+			width: 25px;
+		}
+		.bar div.original.active {
+			margin-left: 15px;
+			background-color: $clr3;
+		}
+		margin-right: 50px;
+		width: 90vw;
+		& > *:not(.location) {
+			display: none;
+		}
+		.guests {
+			display: block;
+			& > *:not(.special-btn) {
+				display: none;
+			}
+			.special-btn {
+				margin-block-end: 20px;
+				transform: translateY(-30%);
+			}
+		}
+	}
+	.bar div.original:hover {
+		background-color: unset;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	.bar {
+		width: 80vw;
+		& .location {
+			width: 250px;
+		}
+		& .special-btn {
+			position: fixed;
+			right: 2.5%;
+			bottom: 50%;
+		}
+		& .guests.original {
+			padding-inline-start: 0;
+		}
+		& .location-describtion {
+			display: none;
+		}
+	}
+	.location-txt {
+		visibility: hidden;
+	}
+}
+
+@media screen and (max-width: 1040px) {
+	.search-bar-date-picker {
+		left: 7%;
+	}
+}

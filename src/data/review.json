@@ -1,0 +1,82 @@
+[
+	{
+		"id": "c001",
+		"txt": "No pictures can do justice to the serenity you feel at this place. Waking up and sleeping to the sounds of river, sunshine always peaking through the trees, birds and butterflies fluttering around- there was a whimsical quality to it all. It felt like a slice of paradise. this hospitality was humbling and she made me feel at home thousands of miles away from my own. I wish I could’ve stayed longer. It’s a home for all fellow wanderers and a place to heal/ for dreams and realities to become one.",
+		"rate": 5,
+		"by": {
+			"_id": 125,
+			"fullName": "michael aharoni",
+			"imgUrl": "https://res.cloudinary.com/dqj9g5gso/image/upload/v1642876794/michael_c38spz.jpg"
+		}
+	},
+	{
+		"id": "c002",
+		"txt": "A very special, historic and beautiful place to be! Our room was decorated so nicely and everything was lovely - the bed, pillows, shower, coffee and more. We very much enjoyed our stay.",
+		"rate": 4,
+		"by": {
+			"_id": 126,
+			"fullName": "idan gez",
+			"imgUrl": "https://res.cloudinary.com/dqj9g5gso/image/upload/v1642876792/idan_pdyaio.jpg"
+		}
+	},
+	{
+		"id": "c003",
+		"txt": "I cant even explain how amazing was the staying... the owner is very kind, the place is warm and clean.",
+		"rate": 4.3,
+		"by": {
+			"_id": 126,
+			"fullName": "idan gez",
+			"imgUrl": "https://res.cloudinary.com/dqj9g5gso/image/upload/v1642876792/idan_pdyaio.jpg"
+		}
+	},
+	{
+		"id": "c004",
+		"txt": "I could not picked a better place to stay , had a wonderful and amazing time . This was top of the list of best places/experiences ever .... Cozy amazing suite ,super clean, and comfortable , lovely authentic castle.... Location is awesome , available parking. Amazing Views from Castle , unique ,fairy tale experience type. a great host, very friendly , pays attention to every single detail to take care of guest , she exceeded my expectations .Traveling through Italy for 7 weeks . I have stayed in many places in Europe, Italy and around the world . I have never experience a place like this ! I recommend this place to everyone , Thank you for a wonderful experience.",
+		"rate": 4.5,
+		"by": {
+			"_id": 125,
+			"fullName": "michael aharoni",
+			"imgUrl": "https://res.cloudinary.com/dqj9g5gso/image/upload/v1642876794/michael_c38spz.jpg"
+		}
+	},
+	{
+		"id": "c005",
+		"txt": "Stunning view, the extra service wasnt so good, (I'm talking about the clean-up and the breakfast).",
+		"rate": 4,
+		"by": {
+			"_id": 124,
+			"fullName": "koren aharon",
+			"imgUrl": "https://res.cloudinary.com/dqj9g5gso/image/upload/v1642876792/koren_xp3iwz.jpg"
+		}
+	},
+	{
+		"id": "c006",
+		"txt": "This is the second time we have stayed in the fantastic apartment in Tova! just a few wonderful days !! comfortable, clean, equipped with a magnificent view of the sea. Thanks!",
+		"rate": 4.4,
+		"by": {
+			"_id": 124,
+			"fullName": "koren aharon",
+			"imgUrl": "https://res.cloudinary.com/dqj9g5gso/image/upload/v1642876792/koren_xp3iwz.jpg"
+		}
+	},
+	{
+		"id": "c007",
+		"txt": "This was the most beautiful, delightful apartment I have seen. The host was respectful and friendly, we ran into some issues before the checkin, so he waited for us without any problems. The place is better than the photos, very cleaned and has a great river view especially in the morning. I would totally recommend this place for everyone want to enjoy his staying.",
+		"rate": 4.4,
+		"by": {
+			"_id": 127,
+			"fullName": "tal ekroni",
+			"imgUrl": "https://res.cloudinary.com/dqj9g5gso/image/upload/v1642926094/T02BJ4W8H45-U02KBCD8V4N-f8aebf3e2faa-512_douxlg.png"
+		}
+	},
+	{
+		"id": "c008",
+		"txt": "This place looks nice but the experience is bad and not acceptable. I have to start by saying thank. The place clean looks very nice Excapt that we didn't really enjoy our time here. First it was the power generator, it took maybe more than one hour troubleshooting the generator and 7:30 the assistant brought another generator. (The first one which he brought was full of corrousions and very old) There was no water although the generator was ON. We spent the with no water, I informed the assistant but it was dark. He gave some instructions but no luck. I spent time just troubleshooting.",
+		"rate": 2.5,
+		"by": {
+			"_id": 127,
+			"fullName": "tal ekroni",
+			"imgUrl": "https://res.cloudinary.com/dqj9g5gso/image/upload/v1642926094/T02BJ4W8H45-U02KBCD8V4N-f8aebf3e2faa-512_douxlg.png"
+		}
+	}
+]

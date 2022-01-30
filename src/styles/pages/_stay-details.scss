@@ -1,0 +1,310 @@
+.details-page {
+	* {
+		color: $clr6;
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	}
+}
+
+.main-container {
+	padding-top: 82px;
+}
+
+.stay-info {
+	max-width: 650px;
+}
+
+.details-img-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2, 240px);
+	gap: 9px;
+	margin: auto;
+	img {
+		transition: 0.2s;
+		&:hover {
+			filter: brightness(85%);
+		}
+	}
+}
+
+.stay-name-details {
+	margin-top: 24px;
+	margin-bottom: 6px;
+	line-height: 1;
+	font-size: rem(26px);
+	font-weight: 600;
+}
+.info-start {
+	justify-content: space-between;
+
+	.share-save {
+		& > * {
+			& > * {
+				cursor: pointer;
+			}
+		}
+		margin-inline-end: 2px;
+		text-decoration: underline;
+		line-height: 1;
+		justify-content: center;
+		align-items: center;
+		img {
+			height: 16px;
+			width: 16px;
+			margin-inline-start: 20px;
+			margin-inline-end: 10px;
+		}
+	}
+}
+
+.dot-before-address {
+	margin: 0 7px;
+	font-weight: 700;
+}
+.dot-before-reviews {
+	margin: 0px 5px;
+	font-weight: 700;
+}
+.stay-location-details {
+	text-decoration: underline;
+	cursor: pointer;
+}
+.stay-location-country {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.stay-reviews-details {
+	margin-bottom: 20px;
+
+	.avg-top-details {
+		text-decoration: underline;
+	}
+	.reviews-count-details {
+		text-decoration: underline;
+	}
+	img {
+		margin-inline-end: 3px;
+		height: 13px;
+		width: 13px;
+	}
+}
+
+.main-img {
+	display: grid;
+	grid-column: 1/3;
+	grid-row: 1/3;
+	object-fit: cover;
+	height: fill;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+
+.dot {
+	margin: 0px 5px;
+	font-size: 2rem;
+	line-height: 1;
+}
+
+.stay-baths-beds {
+	padding: 0;
+	font-weight: 300;
+}
+
+.small-img {
+	object-fit: cover;
+	height: fill;
+}
+.corner-top {
+	border-top-right-radius: 20px;
+}
+.corner-bottom {
+	border-bottom-right-radius: 20px;
+}
+
+.stay-info-container {
+	margin-top: 50px;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+
+	p {
+		font-weight: 400;
+		margin: 5px 0px;
+		line-height: 1.5;
+	}
+	.stay-summery {
+		margin: 0;
+		padding: 30px 0;
+		border-bottom: 1px solid rgb(221, 221, 221);
+		border-top: 1px solid rgb(221, 221, 221);
+	}
+}
+
+.host-info {
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 24px;
+	border-bottom: 1px solid rgb(221, 221, 221);
+	.host-name {
+		text-transform: capitalize;
+	}
+
+	h2 {
+		font-size: rem(22px);
+		font-weight: 600;
+		line-height: 1;
+	}
+}
+
+.mini-host-img {
+	height: 56px;
+	width: 56px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.amenities-list {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	list-style: none;
+	padding: 0;
+}
+
+.amenities-list-header {
+	font-size: 1.7rem;
+	font-weight: 400;
+}
+
+.not-included {
+	text-decoration: line-through;
+}
+
+.map-section {
+	margin: 24px auto;
+}
+
+.amenitie {
+	display: inline;
+	margin-inline-end: 20px;
+	transform: translateY(25%);
+	height: 30px;
+	width: 30px;
+}
+
+.amenitie-item {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen;
+	font-weight: 300;
+	width: fit-content;
+	font-size: 1.3rem;
+	margin-bottom: 10px;
+}
+
+.stay-main-amenities {
+	height: 35px;
+	width: 35px;
+}
+
+.css-1ozefeb {
+	left: -139px !important;
+}
+
+.stay-main-amenities-list {
+	padding: 0;
+	list-style: none;
+	line-height: 1;
+	margin: 20px 0;
+
+	p {
+		margin: 0;
+		height: fit-content;
+		font-size: 0.8rem;
+		color: lighten($clr6, 40);
+	}
+
+	li {
+		margin: 30px 0;
+		gap: 20px;
+		align-items: center;
+		div {
+			height: 50%;
+		}
+	}
+	h3 {
+		font-weight: 600;
+		display: inline;
+	}
+}
+
+@media screen and (max-width: 1300px) {
+	.details-img-container {
+		grid-template-rows: repeat(2, 20vw);
+		grid-template-columns: repeat(4, 20vw);
+		position: relative;
+		left: -1vw;
+	}
+
+	.share-save {
+		padding-inline-end: 10px;
+	}
+}
+
+@media screen and (max-width: 880px) {
+	.css-1ozefeb {
+		left: -100px !important;
+	}
+}
+
+@media screen and (max-width: 780px) {
+	.css-1ozefeb {
+		left: 50px !important;
+	}
+}
+
+@media screen and (max-width: 780px) {
+	.stay-info-container {
+		display: flex;
+		flex-direction: column;
+		margin-top: 25px;
+		& .stay-info {
+			order: 1;
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.stay-name-details {
+		text-align: center;
+	}
+	.info-start {
+		flex-direction: column;
+		& > div {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 5px;
+		}
+		.dot-before-reviews,
+		.dot-before-address {
+			display: none;
+		}
+		.reviews-count-details {
+			margin-inline-start: 3px;
+			margin-inline-end: 10px;
+		}
+		.heart-details {
+			margin-inline-start: 10px !important;
+		}
+	}
+	.details-mobile-carousel {
+		height: 35vh;
+		img {
+			height: 100%;
+			border-radius: 12px;
+			object-fit: cover;
+			margin-bottom: 10px;
+		}
+	}
+	.css-1ozefeb {
+		left: 0px !important;
+	}
+}

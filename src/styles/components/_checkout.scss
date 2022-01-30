@@ -1,0 +1,364 @@
+.special-btn {
+	.order-container {
+		border: 1px solid #00000030;
+		border-radius: 13px;
+		padding: 20px;
+		width: 350px;
+		margin: 0 auto 30px;
+		box-shadow: 0 0 5px 5px #00000015;
+		position: sticky;
+		top: 13%;
+		z-index: 1;
+		transition: 0.5s;
+		color: $clr6;
+
+		.total-price {
+			* {
+				font-weight: 600;
+			}
+			font-size: 1rem;
+			justify-content: space-between;
+			border-top: 1px solid rgb(221, 221, 221);
+		}
+	}
+
+	.order-form-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		margin-bottom: 15px;
+	}
+
+	.order-data {
+		border: 1px solid #00000050;
+		border-radius: 13px;
+		margin-bottom: 15px;
+	}
+
+	.date-picker {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.date-input {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		padding: 7px 12px;
+		&:last-of-type {
+			border-left: 1px solid #00000050;
+		}
+	}
+
+	.guest-input {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		border-top: 1px solid #00000050;
+		padding: 7px 12px;
+		cursor: pointer;
+	}
+
+	input {
+		border: none;
+		border-radius: 13px;
+		outline: none;
+	}
+
+	fieldset {
+		border: none;
+	}
+	.start-date {
+		border-inline-end: 1px solid #00000030;
+	}
+	.end-date {
+		// border-inline-end: 1px solid #00000030;
+	}
+
+	label {
+		font-weight: 600;
+		font-size: 0.75em;
+	}
+	.MuiInputLabel-shrink {
+		transform: translate(20%, -85%);
+		color: $clr1 !important;
+	}
+	// MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-rootMuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root
+	// MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-root MuiFormLabel-colorPrimary Mui-focused css-1sumxir-MuiFormLabel-root-MuiInputLabel-root
+
+	span.cost {
+		color: $clr6;
+		font-size: 1.3em;
+	}
+
+	span.reviews {
+		color: lighten($clr6, 10);
+		font-size: 0.85em;
+		text-decoration: underline;
+	}
+	.avg-checkout {
+		color: lighten($clr6, 10);
+		font-size: 0.85em;
+	}
+
+	.btn-container {
+		position: relative;
+		width: 100%;
+		height: 48px;
+		padding: 0 0;
+		margin: 0 0;
+		cursor: pointer;
+		border: none;
+		display: grid;
+		grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+
+		@for $i from 0 to 10 {
+			.cell:nth-child(10n + #{$i + 1}):hover ~ .content {
+				--positionX: #{$i};
+			}
+
+			.cell:nth-child(n + #{10 * $i + 1}):nth-child(-n + #{10 * ($i + 1)}):hover ~ .content {
+				--positionY: #{$i};
+			}
+		}
+	}
+
+	.cell {
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		// border: 1px solid rgba(128, 128, 128, 0.753);
+	}
+
+	.content {
+		--positionX: 0;
+		--positionY: 5;
+
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		border-radius: 8px;
+
+		background-image: radial-gradient(
+			circle at calc((0 + var(--positionX, 0)) * 10%) calc((0 + var(--positionY, 0)) * 5%),
+			rgb(241, 37, 75) 0%,
+			rgb(230, 30, 77) 27.5%,
+			rgb(227, 28, 95) 40%,
+			rgb(215, 4, 102) 57.5%,
+			rgb(189, 30, 89) 75%,
+			rgb(189, 30, 89) 100%
+		);
+	}
+
+	.action-btn {
+		padding: 0 0;
+		margin: 0 0;
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+		border: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		span {
+			justify-content: space-around;
+			align-items: center;
+			display: flex;
+			img {
+				position: relative;
+				left: -2%;
+				padding: 3px;
+				transform: translate(0.5px, 2px) rotate(-15deg);
+			}
+		}
+	}
+
+	span {
+		padding: 0 0;
+		margin: 0 0;
+		color: white;
+		font-size: 16px;
+		line-height: 20px;
+		font-weight: 600;
+	}
+
+	p.footer {
+		color: gray;
+		font-weight: 500;
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+	}
+	.price-container {
+		margin-top: 20px;
+		.price-details {
+			justify-content: space-between;
+			& > :first-child {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+.search-special-btn {
+	.btn-container {
+		transition: 0.2s;
+		width: 33px;
+		height: 33px;
+		margin-inline-end: 2px;
+	}
+	.content {
+		border-radius: 25px;
+	}
+}
+.search-special-btn .active-mode {
+	& span {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100px;
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	}
+}
+
+.guest-screen {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	height: 200%;
+	width: 100%;
+	// background-color:transparent;
+	opacity: 0;
+}
+
+.guests-checkout {
+	margin-top: 20px;
+	width: 100%;
+}
+
+.guest-add {
+	margin: auto;
+	flex-direction: column;
+	z-index: 1;
+	width: inherit;
+	transition: visibility 0.5s, opacity 0.5s linear;
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.guest-type {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	button {
+		font-size: 2rem;
+		height: fit-content;
+	}
+	h3 {
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+		font-weight: 400;
+	}
+
+	div {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 35%;
+
+		span {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+			font-weight: 300;
+			font-size: 1rem;
+		}
+		.plus-minus {
+			opacity: 0.7;
+		}
+
+		.plus-minus,
+		button {
+			opacity: 0.6;
+			width: 30px;
+			height: 30px;
+			border: none;
+			background-color: transparent;
+			transition: 0.3s;
+			&:hover {
+				opacity: 0.9;
+			}
+		}
+	}
+}
+
+.clear-dates {
+	width: fit-content;
+	height: 40px;
+	vertical-align: middle;
+	margin-inline-end: 10px;
+	margin-inline-start: 10px;
+	cursor: pointer;
+	opacity: 0.2;
+	transition: 0.3s;
+	&:hover {
+		opacity: 0.6;
+	}
+}
+
+.star-checkout {
+	height: 12px;
+	width: 12px;
+}
+
+.checkout-loader {
+	div {
+		display: flex;
+		justify-content: center;
+		gap: 5px;
+		margin: 10px 0;
+	}
+}
+.after-reserver-btn {
+	cursor: unset;
+	position: relative;
+	width: 100%;
+	height: 48px;
+	padding: 0 0;
+	margin: 0 0;
+	border-radius: 8px;
+	color: white !important;
+	font-size: rem(16px);
+	line-height: 20px;
+	font-weight: 600;
+	background-color: darken($clr4, 50);
+}
+
+@media screen and (max-width: 1300px) {
+	.special-btn .order-container {
+		margin-inline-start: 50px;
+		margin-inline-end: 20px;
+	}
+}
+
+@media screen and (max-width: 930px) {
+	.special-btn .order-container {
+		width: 250px;
+	}
+	.order-data .date-picker {
+	}
+}
+
+@media screen and (max-width: 780px) {
+	.special-btn .order-container {
+		width: 100%;
+		margin: 0;
+		margin-bottom: 30px;
+	}
+}

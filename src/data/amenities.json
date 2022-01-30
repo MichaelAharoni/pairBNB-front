@@ -1,0 +1,39 @@
+[
+	{
+		"Bathroom": ["Hair dryer", "Shampoo", "Hot water"]
+	},
+	{
+		"Bedroom and laundry": ["Washer", "Essentials", "Hangers", "Bed linens", "Extra pillows and blankets", "Iron"]
+	},
+	{
+		"Entertainment": ["Ethernet connection", "TV", "Suitable for events"]
+	},
+
+	{
+		"Heating and cooling": ["Air conditioning", "Indoor fireplace", "Heating"]
+	},
+	{
+		"Home safety": ["Fire extinguisher", "First aid kit"]
+	},
+	{
+		"Internet and office": ["Wifi", "Dedicated workspace"]
+	},
+	{
+		"Kitchen and dining": ["Kitchen", "Refrigerator", "Cooking basics", "Dishes and silverware", "Dishwasher", "Stove", "Coffee maker"]
+	},
+	{
+		"Location features": ["Beach access", "Private entrance"]
+	},
+	{
+		"Outdoor": ["Patio or balcony", "BBQ grill"]
+	},
+	{
+		"Parking and facilities": ["Free parking on premises", "Pool"]
+	},
+	{
+		"Services": ["Pets allowed", "Smoking allowed", "Long term stays allowed", "Security cameras"]
+	},
+	{
+		"Not included": ["Smoke alarm", "Carbon monoxide alarm"]
+	}
+]

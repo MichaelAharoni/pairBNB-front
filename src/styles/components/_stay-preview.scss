@@ -1,0 +1,77 @@
+.stay-preview {
+	cursor: pointer;
+	aspect-ratio: 1;
+	display:flex;
+	flex-direction: column;
+	overflow: hidden;
+	position: relative;
+	img:not(.stay-preview-heart) {
+		height: 100%;
+		border-radius: 12px;
+		object-fit: contain;
+		margin-bottom: 10px;
+	}
+	button {
+		border:unset;
+	}
+}
+
+.stay-preview-img{
+	height: 0;
+	flex-grow:1;
+	overflow: hidden;	
+	}
+
+.stay-reviews {
+	font-size: 14px;
+	img {
+		width: 15px;
+		transform: translateY(70%);
+	}
+}
+.stay-reviews-total {
+	margin-left: 5px;
+}
+
+.stay-reviews-brackets {
+	color: #484848;
+}
+.stay-preview-details {
+	height:100px;
+	margin-left:5px;
+	line-height: 16px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	cursor: default;
+}
+
+.stay-type-country {
+	padding-top: 6px;
+}
+
+.stay-name {
+	padding-top: 6px;
+}
+
+.stay-price-night {
+	display: flex;
+}
+
+.stay-price {
+	display: flex;
+	padding-top: 6px;
+	font-weight: 700;
+}
+
+.stay-night {
+	margin-left: 4px;
+	font-weight: 400;
+}
+
+.stay-preview-heart{
+    position: absolute;
+    height: 22px;
+    width: 25px;
+    z-index: 9;
+	top: 15px;
+	right:15px;
+}

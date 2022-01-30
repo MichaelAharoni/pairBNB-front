@@ -1,0 +1,57 @@
+.user-msg {
+	z-index: 100;
+	animation: append-animate 0.2s linear;
+	color: whitesmoke;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px 10px 0px 10px;
+	font-size: 1.125rem;
+	font-family: inherit;
+	position: fixed;
+	bottom: 3%;
+	right: 7.9%;
+	min-width: 150px;
+	height: 40px;
+	background-color: #1c1919;
+	border-radius: 6px;
+	p {
+		line-height: 1;
+		padding-inline-end: 10px;
+	}
+
+	button {
+		border: 0;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	&.success {
+		background-color: #9df89d;
+	}
+
+	&.bnb {
+		background-color: $clr1;
+	}
+}
+
+.close-user-msg {
+	height: 20px;
+	margin-top: 3px;
+}
+
+.detail-layout .user-msg {
+	right: 21.2%;
+}
+
+@keyframes append-animate {
+	from {
+		transform: scale(0);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}

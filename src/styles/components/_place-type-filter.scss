@@ -1,0 +1,43 @@
+.place-type-filter{
+    position: absolute;
+    top:-20px;
+    margin-top:10px;
+    left: 135px;
+    width: 340px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: #fff;
+    border: 0.5px solid hsla(0,0%,46.3%,.28);
+    border-radius: 12px;
+    padding: 0 20px;
+}
+
+.type-header{
+    font-family: circular;
+    font-size: 16px;
+    line-height: 20px;
+    color: #222;
+}
+
+.type-text{
+    font-family: circular;
+    font-size: 14px;
+    line-height: 20px;
+    color: #717171;
+}
+
+@media screen and (max-width:680px) {
+.place-type-filter{
+ left: 0;
+}
+}
+
+@media screen and (max-width:475px) {
+.place-type-filter{
+    position: fixed;
+ left: 5%;
+ top: 18%;
+}
+}

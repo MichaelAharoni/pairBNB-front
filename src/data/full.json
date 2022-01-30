@@ -1,0 +1,90 @@
+[
+	{
+		"stay": [
+			{
+				"_id": "mongo001",
+				"name": "Jaklino Riso",
+				"type": "House",
+				"imgUrls": [
+					"https://res.cloudinary.com/dqj9g5gso/image/upload/v1642520865/imgs/z8_yd5xza.jpg",
+					"https://res.cloudinary.com/dqj9g5gso/image/upload/v1642520865/imgs/z9_ly6miw.jpg",
+					"https://res.cloudinary.com/dqj9g5gso/image/upload/v1642520864/imgs/z5_lpogr7.jpg",
+					"https://res.cloudinary.com/dqj9g5gso/image/upload/v1642520864/imgs/z4_wvbadb.jpg",
+					"https://res.cloudinary.com/dqj9g5gso/image/upload/v1642520864/imgs/z6_iwye5p.jpg",
+					"https://res.cloudinary.com/dqj9g5gso/image/upload/v1642520864/imgs/z7_vbb404.jpg",
+					"https://res.cloudinary.com/dqj9g5gso/image/upload/v1642520864/imgs/z2_m5ydxe.jpg",
+					"https://res.cloudinary.com/dqj9g5gso/image/upload/v1642520864/imgs/z5_lpogr7.jpg"
+				],
+				"price": 380.0,
+				"summary": "Welcome to my city home. It is centrally located in NYC, just steps from Madison Square Garden and Penn Station to get you off to all your favorite destinations. This apartment makes for lovely weekend stay when I'm not in town - close to attractions, restaurants, nightlife and shopping. Thank you for considering. Please reach out with any questions and I will happily answer them.",
+				"capacity": 6,
+				"amenities": ["TV", "Wifi", "Kitchen", "Smoking allowed", "Pets allowed", "Cooking basics"],
+				"host": {
+					"_id": "mongo101",
+					"fullName": "Davit Pok",
+					"imgUrl": "https://a0.muscache.com/im/pictures/fab79f25-2e10-4f0f-9711-663cb69dc7d8.jpg?aki_policy=profile_small"
+				},
+				"loc": {
+					"country": "New-York",
+					"countryCode": "NY",
+					"address": "Porto, Portugal",
+					"lat": 40.73061,
+					"lng": -73.935242
+				},
+				"reviews": [
+					{
+						"id": "c001",
+						"txt": "Very helpful hosts. Cooked traditional...",
+						"rate": 4,
+						"by": {
+							"_id": "mongo201",
+							"fullName": "user2",
+							"imgUrl": "/img/img2.jpg"
+						}
+					}
+				],
+				"likedByUsers": ["mini-user"]
+			}
+		],
+		"order": [
+			{
+				"_id": "mongo1225",
+				"hostId": "u102",
+				"createdAt": "mongoId.getTimestemp",
+				"buyer": {
+					"_id": "u101",
+					"fullName": "User 1"
+				},
+				"totalPrice": 760,
+				"startDate": "132456135145646",
+				"endDate": "132456115145646",
+				"guests": {
+					"adults": 2,
+					"kids": 1
+				},
+				"stay": {
+					"_id": "mongo102",
+					"name": "House Of Uncle My",
+					"price": 380.0
+				},
+				"status": "pending"
+			}
+		],
+		"user": [
+			{
+				"_id": "mongo001",
+				"fullName": "Mosh Ben Ari",
+				"imgUrl": "/img/img1.jpg",
+				"username": "moshmush12",
+				"password": "secret"
+			},
+			{
+				"_id": "u102",
+				"fullName": "Sharon Milevich",
+				"imgUrl": "/img/img2.jpg",
+				"username": "sharmil92",
+				"password": "secret"
+			}
+		]
+	}
+]
