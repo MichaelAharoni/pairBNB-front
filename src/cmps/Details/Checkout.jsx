@@ -51,7 +51,7 @@ export function Checkout({ stay, avg }) {
 			await orderService.save(reserved);
 			socketService.emit("new-order", stay.host._id);
 			const userTosave = await userService.getById(currUser._id);
-			userTosave.notifications.push("your order has been recived in our system");
+			userTosave.notifications.push("Your order has been recived in our system");
 			const newUser = await userService.update(userTosave);
 			userService.setLoggedinUser(newUser);
 			dispatch(updateUserNotifications(newUser.notifications));
