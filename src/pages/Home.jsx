@@ -79,7 +79,7 @@ export function Home() {
 				<div className='gradient'></div>
 				<h1 className='host-title'>Become a host</h1>
 				<Link to={"/host"}>
-					<button className='host-btn home-btn'>
+					<button onClick={()=>{window.scrollTo(0,0)}} className='host-btn home-btn'>
 						<span>Start Here</span>
 					</button>
 				</Link>

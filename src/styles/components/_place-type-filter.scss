@@ -2,7 +2,7 @@
     position: absolute;
     top:-20px;
     margin-top:10px;
-    left: 135px;
+    left: 120px;
     width: 340px;
     z-index: 10;
     display: flex;
@@ -37,7 +37,14 @@
 @media screen and (max-width:475px) {
 .place-type-filter{
     position: fixed;
- left: 5%;
- top: 18%;
+ top: 23%;
+ left: 7%;
+}
+}
+
+@media screen and (max-width:400px) {
+.place-type-filter{
+ top: 24%;
+ left: 4.8%;
 }
 }
