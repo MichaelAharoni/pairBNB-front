@@ -7,7 +7,6 @@ import { toggleIsExplore, toggleHeaderIsTop, toggleHeaderIsActive } from "../sto
 import { SortAmenities } from "../cmps/Explore/Filter/SortAmenities";
 import { StayList } from "../cmps/Explore/StayList.jsx";
 import { Loader } from "../cmps/General/Loader";
-// import { useParams } from "react-router-dom";
 
 export function _Explore({ match, loadStays, stays, staysToShow, toggleIsExplore }) {
 	const [currStays, setCurrStays] = useState(null);

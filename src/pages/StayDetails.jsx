@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect, useDispatch } from "react-redux";
-import { useParams, useRouteMatch } from "react-router-dom/cjs/react-router-dom.min";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 import { Map } from "../cmps/Details/Map";
 import { Loader } from "../cmps/General/Loader";
@@ -200,7 +200,7 @@ function _StayDetails({ toggleDetailsLayout }) {
 	);
 }
 
-function mapStateToProps({}) {
+function mapStateToProps({ }) {
 	return {};
 }
 const mapDispatchToProps = {

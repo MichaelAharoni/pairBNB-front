@@ -17,11 +17,8 @@ import reviewStar from "../../styles/svg/star.svg";
 import downArrow from "../../styles/svg/arrows/down-arrow.svg";
 import upArrow from "../../styles/svg/arrows/up-arrow.svg";
 
-import { differenceInSeconds } from "date-fns";
-
 export function Checkout({ stay, avg }) {
 	const order = useSelector((state) => state.stayModule.searchParams);
-	// const [order, setOrder] = useState({ checkIn: null, checkOut: null, guestsCount: 1, adults: 1, children: 0, infants: 0 });
 	const [isGuestsActive, toggleGuests] = useState(false);
 	const [btnMode, setIsDeley] = useState({ loader: false, reserve: false, btnTxt: "Check availability" });
 	const dispatch = useDispatch();

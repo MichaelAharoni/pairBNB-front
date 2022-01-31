@@ -23,8 +23,6 @@ export function AddReview({ stay, set }) {
 	const [rating, setRating] = React.useState([5, 5, 5, 5, 5, 5]);
 	const types = ["Cleanliness:", "Communication:", "Check-in:", "Accuracy:", "Location:", "Value:"];
 
-	function MultilineTextFields() {}
-
 	const handleChange = (event) => {
 		setValue(event.target.value);
 	};
@@ -41,8 +39,7 @@ export function AddReview({ stay, set }) {
 		newReview.rate = { cleanliness: rating[0], communication: rating[1], checkin: rating[2], accuracy: rating[3], location: rating[4], value: rating[5], avg };
 		newReview.by = user;
 		newStay.reviews.unshift(newReview);
-		const updatedStay = await stayService.update(newStay);
-
+		await stayService.update(newStay);
 		set({ ...newStay });
 		dispatch(openMsg({ txt: "Review added", type: "bnb" }));
 	}
@@ -57,6 +54,7 @@ export function AddReview({ stay, set }) {
 			},
 		},
 	});
+
 	const btnTheme = createTheme({
 		palette: {
 			primary: {
@@ -105,7 +103,7 @@ function RatingBar(type, idx, value, setValue) {
 				onChange={() => {
 					setnewValue();
 				}}
-				onChangeActive={(event, newHover) => {
+				onChangeActive={(newHover) => {
 					setHover(newHover);
 				}}
 				emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize='inherit' />}

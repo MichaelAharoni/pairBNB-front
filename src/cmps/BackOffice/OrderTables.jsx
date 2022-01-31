@@ -95,6 +95,7 @@ export function HostTable() {
 		const pending = orders.filter((order) => order[5] === "Pending");
 		return pending.length;
 	}
+
 	function getTotalEarning(orders) {
 		let price = 0;
 		const approved = orders.filter((order) => order[5] === "Approved");
@@ -103,8 +104,8 @@ export function HostTable() {
 			price += +currPrice;
 		});
 		return price.toFixed(1);
-		// return .length;
 	}
+
 	function getOrderTypes(orders, type) {
 		let ammount = 0;
 		orders.forEach((order) => {
@@ -178,7 +179,6 @@ export function UserTable() {
 		orders = orders.map((order, idx) => {
 			return [order.stay.name, order.host.name, order.startDate, order.endDate, `$${+order.totalPrice}`, order.status, urls[order.status]];
 		});
-
 		setOrders(orders);
 	}
 

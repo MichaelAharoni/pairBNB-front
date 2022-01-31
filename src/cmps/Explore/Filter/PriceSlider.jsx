@@ -10,7 +10,6 @@ import Box from "@mui/material/Box";
 import { sortByPrice } from "../../../store/stay.action.js";
 function ValueLabelComponent(props) {
 	const { children, value } = props;
-
 	return (
 		<Tooltip enterTouchDelay={0} placement='top' title={value}>
 			{children}
@@ -72,7 +71,7 @@ AirbnbThumbComponent.propTypes = {
 export function _PriceSlider({ stays, sortByPrice, filterBy, stayType }) {
 	const [stayPrice, setPriceRange] = useState({
 		minPrice: 0,
-		maxPrice: 1000,
+		maxPrice: 500,
 	});
 
 	const handleChange = (event) => {
@@ -80,11 +79,11 @@ export function _PriceSlider({ stays, sortByPrice, filterBy, stayType }) {
 		setPriceRange({ minPrice: priceRange[0], maxPrice: priceRange[1] });
 	};
 
-	useEffect(() => {
+		useEffect(() => {
 		sortByPrice(stays, filterBy, stayType, stayPrice);
 	}, [stayPrice]);
 
-	let maxPrice = 1000;
+	let maxPrice = 500;
 	let minPrice = 0;
 
 	const stayPrices = stays.map((stay) => {
@@ -105,7 +104,7 @@ export function _PriceSlider({ stays, sortByPrice, filterBy, stayType }) {
 					// marks={marks}
 					components={{ Thumb: AirbnbThumbComponent }}
 					getAriaLabel={(index) => (index === 0 ? "Minimum price" : "Maximum price")}
-					defaultValue={[0, 1000]}
+					defaultValue={[0, 500]}
 				/>
 				<div className='price-range flex'>
 					<div className='minmax-price'>

@@ -111,15 +111,19 @@ export function AddStay() {
 	const handleChangeCapacity = (event) => {
 		setStayCapacity(event.target.value);
 	};
+
 	const handleChangePrice = (event) => {
 		setStayPrice(event.target.value);
 	};
+
 	const handleChangePlaceType = (event) => {
 		setPlaceType(event.target.value);
 	};
+
 	const handleChangeSpaceType = (event) => {
 		setSpaceType(event.target.value);
 	};
+	
 	const handleChangeDescription = (event) => {
 		setStayDescription(event.target.value);
 	};
@@ -140,7 +144,7 @@ export function AddStay() {
 		let stay = { stayName, stayAdress, stayCapacity, stayPrice, placeType, spaceType, stayDescription, stayAmenities, stayImgs };
 		stayService.save(stay);
 		const user = userService.getLoggedinUser();
-		userService.setLoggedinUser({...user, isHost:true})
+		userService.setLoggedinUser({ ...user, isHost: true })
 	}
 
 	return (

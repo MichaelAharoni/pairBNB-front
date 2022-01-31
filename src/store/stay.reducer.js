@@ -10,7 +10,7 @@ const initialState = {
     },
     stayPrice: {
         minPrice: 0,
-        maxPrice: 1000,
+        maxPrice: 500,
     },
     searchParams:
     {
