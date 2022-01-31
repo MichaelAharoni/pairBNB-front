@@ -29,13 +29,15 @@ function _StayDetails({ toggleDetailsLayout }) {
 	const params = useParams();
 	const [stay, setStay] = useState(null);
 	const [avg, setAvg] = useState(0);
+	const [isImgModalOpen, toggleImgModal] = useState(false);
 	const [isAfterPhotos, setIsAfterCheckout] = useState(false);
 	const [isAfterCheckout, setisAfterCheckout] = useState(false);
 	const [currUser, setCurrUser] = useState(userService.getLoggedinUser());
-	const isUserLikeCurrStay = currUser?.likedStays?.some((currStay) => currStay._id === stay?._id);
 	const dispatch = useDispatch();
 	const changedHeader = useRef();
 	const afterCheckout = useRef();
+
+	const isUserLikeCurrStay = currUser?.likedStays?.some((currStay) => currStay._id === stay?._id);
 
 	useEffect(() => {
 		(async () => {
@@ -146,15 +148,24 @@ function _StayDetails({ toggleDetailsLayout }) {
 
 				{window.innerWidth > 780 ? (
 					<div className='details-img-container'>
-						<img className='main-img' src={stay.imgUrls[0]} alt='' />
-						<img className='small-img' src={stay.imgUrls[1]} alt='' />
-						<img className='small-img corner-top' src={stay.imgUrls[2]} alt='' />
-						<img className='small-img' src={stay.imgUrls[3]} alt='' />
-						<img className='small-img corner-bottom' src={stay.imgUrls[4]} alt='' />
+						<img onClick={() => toggleImgModal(!isImgModalOpen)} className='main-img' src={stay.imgUrls[0]} alt='' />
+						<img onClick={() => toggleImgModal(!isImgModalOpen)} className='small-img' src={stay.imgUrls[1]} alt='' />
+						<img onClick={() => toggleImgModal(!isImgModalOpen)} className='small-img corner-top' src={stay.imgUrls[2]} alt='' />
+						<img onClick={() => toggleImgModal(!isImgModalOpen)} className='small-img' src={stay.imgUrls[3]} alt='' />
+						<img onClick={() => toggleImgModal(!isImgModalOpen)} className='small-img corner-bottom' src={stay.imgUrls[4]} alt='' />
 					</div>
 				) : (
 					<div className='details-mobile-carousel'>
 						<ImageCarousel stay={stay} />
+					</div>
+				)}
+				{isImgModalOpen && window.innerWidth > 780 && (
+					<div onClick={() => toggleImgModal(!isImgModalOpen)} className='img-modal'>
+						<div className='image-carousel-container detail-layout'>
+							<div onClick={(ev) => ev.stopPropagation()}>
+								<ImageCarousel stay={stay} />
+							</div>
+						</div>
 					</div>
 				)}
 				<div className='stay-info-container'>
@@ -258,7 +269,7 @@ function _StayDetails({ toggleDetailsLayout }) {
 	);
 }
 
-function mapStateToProps({ }) {
+function mapStateToProps({}) {
 	return {};
 }
 const mapDispatchToProps = {
