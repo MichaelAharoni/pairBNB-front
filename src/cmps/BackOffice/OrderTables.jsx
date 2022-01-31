@@ -130,24 +130,23 @@ export function HostTable() {
 			</h2>
 			<div>
 				<div className='orders-types flex'>
-					<div>Orders:</div>
-					<span>
-						{getOrderTypes(myOrders, "Approved")}
-						<div style={{ backgroundColor: "#9df89d" }} className='orders-ball'></div>
-						(Approved)
-					</span>
-					<span>
-						{getOrderTypes(myOrders, "Pending")}
-						<div style={{ backgroundColor: "#faf87b" }} className='orders-ball'></div>
-						(Pending)
-					</span>
-					<span>
-						{getOrderTypes(myOrders, "Declined")}
-						<div style={{ backgroundColor: "#fa7b7b" }} className='orders-ball'></div>
-						(Declined)
-					</span>
-				</div>
-				<div>
+					<div className='flex'>
+						<span>
+							{getOrderTypes(myOrders, "Approved")}
+							<div style={{ backgroundColor: "#9df89d" }} className='orders-ball'></div>
+							(Approved)
+						</span>
+						<span>
+							{getOrderTypes(myOrders, "Pending")}
+							<div style={{ backgroundColor: "#faf87b" }} className='orders-ball'></div>
+							(Pending)
+						</span>
+						<span>
+							{getOrderTypes(myOrders, "Declined")}
+							<div style={{ backgroundColor: "#fa7b7b" }} className='orders-ball'></div>
+							(Declined)
+						</span>
+					</div>
 					<span>Total earning: ${getTotalEarning(myOrders)}</span>
 				</div>
 			</div>
@@ -230,7 +229,7 @@ export function UserTable() {
 			{getPendingOrders(myOrders) > 0 && <p>Our hosts will respond to your pending trips soon</p>}
 			<div>
 				<div className='orders-types flex'>
-					<div>Trips:</div>
+					<div className='trips'>Trips:</div>
 					<span>
 						{getOrderTypes(myOrders, "Approved")}
 						<div style={{ backgroundColor: "#9df89d" }} className='orders-ball'></div>

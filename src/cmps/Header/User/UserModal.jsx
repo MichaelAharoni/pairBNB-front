@@ -57,9 +57,11 @@ export function UserModal({ handleUserModal }) {
 				</li>
 				<hr />
 				<li>
-					<Link to={"/host"}>
-						<span className='user-modal-span'>Start hosting</span>
-					</Link>
+					{loggUser?.host && (
+						<Link to={"/host"}>
+							<span className='user-modal-span'>Start hosting</span>
+						</Link>
+					)}
 				</li>
 				<li onClick={onLogOut}>
 					{loggUser ? (
