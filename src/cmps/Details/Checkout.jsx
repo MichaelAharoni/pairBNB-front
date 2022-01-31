@@ -51,7 +51,7 @@ export function Checkout({ stay, avg }) {
 			await orderService.save(reserved);
 			socketService.emit("new-order", stay.host._id);
 			const userTosave = await userService.getById(currUser._id);
-			userTosave.notifications.push("Your order has been recived in our system");
+			userTosave.notifications.push("Your order has been received in our system");
 			const newUser = await userService.update(userTosave);
 			userService.setLoggedinUser(newUser);
 			dispatch(updateUserNotifications(newUser.notifications));
@@ -71,7 +71,8 @@ export function Checkout({ stay, avg }) {
 	}
 
 	function getTotalNights() {
-		return (new Date(order.checkOut) - new Date(order.checkIn)) / (1000 * 60 * 60 * 24);
+		const nights = Math.round((new Date(order.checkOut) - new Date(order.checkIn)) / (1000 * 60 * 60 * 24));
+		return nights;
 	}
 
 	return (

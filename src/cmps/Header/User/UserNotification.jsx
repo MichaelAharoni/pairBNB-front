@@ -14,10 +14,10 @@ export function UserNotification() {
 	useEffect(() => {
 		socketService.setup();
 		if (loggedUser) socketService.emit("socket-by-userId", loggedUser._id);
-		socketService.on("recive-new-order", handleNewNotification);
+		socketService.on("receive-new-order", handleNewNotification);
 		socketService.on("response-to-guest", handleNewNotification);
 		return () => {
-			socketService.off("recive-new-order", handleNewNotification);
+			socketService.off("receive-new-order", handleNewNotification);
 			socketService.off("response-to-guest", handleNewNotification);
 		};
 	}, []);
