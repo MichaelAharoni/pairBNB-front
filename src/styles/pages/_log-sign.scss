@@ -1,0 +1,17 @@
+.already-have-acc {
+	justify-content: flex-start;
+}
+
+@media screen and (max-width: 1024px) {
+	.log-sign-section {
+		max-width: 80%;
+		margin: auto;
+		& * {
+			max-width: 250px;
+		}
+		.google-login,
+		.facebook-login {
+			box-shadow: 0px 0px 5px 0px #00000061;
+		}
+	}
+}

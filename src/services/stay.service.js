@@ -122,8 +122,6 @@ async function save(stay) {
     newStay.imgUrls = stay.stayImgs
     const addedStay = await httpService.post('stay', newStay);
     await httpService.put('user', { ...currHost, isHost: true });
-    console.log('stay added', addedStay);
-
 }
 
 function getAmenities(stayAmenities) {
@@ -169,7 +167,6 @@ function getAmenities(stayAmenities) {
         switch (amenity) {
             case "Shampoo":
                 amenities[0].Bathroom.push(amenity)
-                console.log(amenities)
                 break;
             case "Hot water":
                 amenities[0].Bathroom.push(amenity)
@@ -226,7 +223,6 @@ function getAmenities(stayAmenities) {
                 amenities[5]["Internet and office"].push(amenity)
                 break;
             case "Dedicated workspace":
-                console.log(amenities[6])
                 amenities[5]["Internet and office"].push(amenity)
                 break;
             case "Dishwasher":
@@ -246,6 +242,7 @@ function getAmenities(stayAmenities) {
                 break;
             case "Refrigerator":
                 amenities[6]["Kitchen and dining"].push(amenity)
+                break;
             case "Kitchen":
                 amenities[6]["Kitchen and dining"].push(amenity)
                 break;

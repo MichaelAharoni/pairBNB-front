@@ -36,10 +36,7 @@ export function HostTable() {
 
 	async function loadOrders() {
 		const allOrders = await orderService.query();
-		console.log(allOrders);
-		console.log(loggedinUser);
 		let orders = allOrders.filter((order) => order.host._id === loggedinUser._id);
-		console.log(orders);
 		orders = orders.map((order, idx) => {
 			pendingButtons = (
 				<div style={{ display: "flex", gap: "10px" }}>
@@ -91,7 +88,6 @@ export function HostTable() {
 	}, [currOrderClicked]);
 
 	function getPendingOrders(orders) {
-		console.log(orders);
 		const pending = orders.filter((order) => order[5] === "Pending");
 		return pending.length;
 	}

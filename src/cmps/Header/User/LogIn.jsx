@@ -147,42 +147,41 @@ export function LogIn({ setIsSubmitting, signingIn }) {
 								<SpecialBtn size={{ width: "inherit", height: "40px" }} text={"Log in"} />
 							</div>
 						</button>
-
-						<GoogleLogin
-							scope='profile email'
-							nredirect_uri={URL}
-							clientId={apiKeys.googleAuth}
-							buttonText='Login with Google acccount'
-							onSuccess={responseGoogle}
-							onFailure={responseGoogle}
-							render={(renderProps) => (
-								<GoogleLoginButton
-									style={{ display: "flex", justifyContent: "center", height: "35px", margin: "10px 0", width: "396px" }}
-									onClick={renderProps.onClick}
-									disabled={renderProps.disabled}>
-									Log in with Google
-								</GoogleLoginButton>
-							)}
-							cookiePolicy={"single_host_origin"}
-						/>
-
-						<FacebookLogin
-							appId={apiKeys.facebookAuth}
-							fields='name,email,picture'
-							render={(renderProps) => (
-								<FacebookLoginButton
-									style={{ display: "flex", justifyContent: "center", height: "35px", margin: "10px 0", width: "396px" }}
-									onClick={renderProps.onClick}
-									disabled={renderProps.disabled}>
-									Log in with Facebook
-								</FacebookLoginButton>
-							)}
-							callback={responseFacebook}
-						/>
+						<div className='google-login'>
+							<GoogleLogin
+								scope='profile email'
+								nredirect_uri={URL}
+								clientId={apiKeys.googleAuth}
+								buttonText='Login with Google acccount'
+								onSuccess={responseGoogle}
+								onFailure={responseGoogle}
+								render={(renderProps) => (
+									<GoogleLoginButton
+										style={{ display: "flex", justifyContent: "center", height: "35px", margin: "10px 0", width: "396px" }}
+										onClick={renderProps.onClick}
+										disabled={renderProps.disabled}>
+										Log in with Google
+									</GoogleLoginButton>
+								)}
+								cookiePolicy={"single_host_origin"}
+							/>
+						</div>
+						<div className='facebook-login'>
+							<FacebookLogin
+								appId={apiKeys.facebookAuth}
+								fields='name,email,picture'
+								render={(renderProps) => (
+									<FacebookLoginButton
+										style={{ display: "flex", justifyContent: "center", height: "35px", margin: "10px 0", width: "396px" }}
+										onClick={renderProps.onClick}
+										disabled={renderProps.disabled}>
+										Log in with Facebook
+									</FacebookLoginButton>
+								)}
+								callback={responseFacebook}
+							/>
+						</div>
 						<Grid container>
-							<Grid item xs>
-								<Link to='/signup'>Forgot password?</Link>
-							</Grid>
 							<Grid item>
 								<Link to='/user/signup'>{"Don't have an account? Sign Up"}</Link>
 							</Grid>
