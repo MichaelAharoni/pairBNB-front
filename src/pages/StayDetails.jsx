@@ -57,7 +57,7 @@ function _StayDetails({ toggleDetailsLayout }) {
 		} else {
 			setIsAfterCheckout(false);
 		}
-		if (afterCheckout.current.getBoundingClientRect().top <= 130) {
+		if (afterCheckout.current.getBoundingClientRect().top <= 130 || window.innerWidth < 780) {
 			setisAfterCheckout(true);
 		} else {
 			setisAfterCheckout(false);
@@ -245,7 +245,7 @@ function _StayDetails({ toggleDetailsLayout }) {
 									</p>
 								</div>
 								<div className='special-btn'>
-									<a href='#amenities'>
+									<a href={window.innerWidth > 780 ? "#amenities" : "#checkout"}>
 										<SpecialBtn size={{ width: "180px", height: "50px" }} text={"Check availability"} />
 									</a>
 								</div>

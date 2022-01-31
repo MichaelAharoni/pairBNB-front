@@ -323,6 +323,17 @@
 			order: 1;
 		}
 	}
+	.details-header-after-checkout {
+		top: unset;
+		border-top: 1px solid #dddddd;
+		bottom: 0;
+		& > div {
+			justify-content: flex-end;
+		}
+		.details-heaader-nav {
+			display: none;
+		}
+	}
 }
 
 @media screen and (max-width: 480px) {
