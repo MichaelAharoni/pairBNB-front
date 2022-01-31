@@ -214,6 +214,14 @@
 	}
 }
 
+@media screen and (max-width:780px) {
+	.home-btn {
+		width: 51%;
+		height: 90%;
+
+	}	
+}
+
 @media screen and (max-width: 400px) {
 	.home .cities-title {
 		font-size: 20px;

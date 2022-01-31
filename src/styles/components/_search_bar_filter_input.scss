@@ -139,6 +139,11 @@
       width: 85vw;
     }
   }
+  .search-input {
+    position: fixed;
+    top: 12px;
+    left: 7%;
+  }
 }
 
 @media screen and (max-width: 520px) {
@@ -149,11 +154,7 @@
       width: 75vw;
     }
   }
-  .search-input {
-    position: fixed;
-    top: 22px;
-    left: 7%;
-  }
+
   .data-result {
     position: fixed;
     max-width: 100%;

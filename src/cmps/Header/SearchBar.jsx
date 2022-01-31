@@ -108,7 +108,7 @@ function _SearchBar({ searchBarTabs, handleSearchBarTabs, setSearchBarTabsActive
 						onClick={onSearch}
 						args={searchParams}
 						isActive={searchBarTabs}
-						size={{ width: "50px", height: "50px" }}
+						size={isMobileWidth ? { width: "40px", height: "40px" } : { width: "50px", height: "50px" }}
 						text={<img src={searchSvg} className='search-svg' alt='' />}
 					/>
 				</div>

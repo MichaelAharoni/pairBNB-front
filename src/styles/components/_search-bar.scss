@@ -159,7 +159,7 @@ input[type="text"]:focus {
 	right: 3%;
 	top: 12%;
 	& img {
-		width: 50%;
+		width: 25px;
 		transition: unset;
 		transform: translate(0.5px, 2px) rotate(-15deg);
 	}
@@ -236,6 +236,18 @@ input[type="text"]:focus {
 				margin-block-end: 20px;
 				transform: translateY(-30%);
 			}
+		}
+	}
+	.mobile-header .bar {
+		height: inherit;
+		& .special-btn .content {
+			transform: translate(15%,-5%);
+		}
+		& .special-btn .active-mode {
+			transform: translateX(-9%);
+		}
+		& .search-input {
+
 		}
 	}
 	.bar div.original:hover {
