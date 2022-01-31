@@ -125,8 +125,8 @@
 
 @media screen and (max-width: 780px) {
   .flexible-btn-container {
-    width: 90vw;
-    height: 13vh;
+    width: 92vw;
+    height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,7 +149,8 @@
 @media screen and (max-width: 520px) {
   .flexible-btn-container {
     position: fixed;
-    left: -7%;
+    left: -8%;
+    top: 60px;
     button {
       width: 75vw;
     }
@@ -158,5 +159,6 @@
   .data-result {
     position: fixed;
     max-width: 100%;
+    top: 60px;
   }
 }

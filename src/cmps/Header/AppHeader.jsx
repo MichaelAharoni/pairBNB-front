@@ -90,6 +90,8 @@ function _AppHeader({ toggleDetailsLayout, toggleHeaderIsTop, toggleIsExplore, t
 
 	function handleMobileScreen() {
 		setIsMobileScreenOpen(false);
+		setIsSearchBarOpen(false);
+		setIsScreenOpen(false);
 	}
 
 	useEffect(() => {
