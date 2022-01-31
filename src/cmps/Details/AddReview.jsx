@@ -21,7 +21,7 @@ export function AddReview({ stay, set }) {
 	const dispatch = useDispatch();
 	const [value, setValue] = React.useState("");
 	const [rating, setRating] = React.useState([5, 5, 5, 5, 5, 5]);
-	const types = ["Cleanliness:", "Communication:", "Check-in:", "Accuracy:", "Location:", "Value:"];
+	const types = ["Cleanliness:", "Check-in:", "Accuracy:", "Communication:", "Location:", "Value:"];
 
 	function MultilineTextFields() {}
 
@@ -38,7 +38,7 @@ export function AddReview({ stay, set }) {
 		const newReview = {};
 		newReview.id = utilService.makeId(10);
 		newReview.txt = value;
-		newReview.rate = { cleanliness: rating[0], communication: rating[1], checkin: rating[2], accuracy: rating[3], location: rating[4], value: rating[5], avg };
+		newReview.rate = { cleanliness: rating[0], checkin: rating[1], accuracy: rating[2], communication: rating[3], location: rating[4], value: rating[5], avg };
 		newReview.by = user;
 		newStay.reviews.unshift(newReview);
 		const updatedStay = await stayService.update(newStay);

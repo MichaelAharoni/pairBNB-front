@@ -60,10 +60,12 @@
 	grid-template-columns: 1fr 1fr 1fr;
 	align-items: center;
 	margin-bottom: 20px;
+	grid-column-gap: 100px;
 
 	.bar-container {
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
 	}
 
 	.rating-bar-header {
@@ -131,7 +133,7 @@
 	}
 }
 
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 1200px) {
 	.rating-bars-container {
 		grid-template-rows: 1fr 1fr;
 		grid-template-columns: 1fr 1fr;

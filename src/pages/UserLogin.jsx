@@ -10,10 +10,10 @@ import { SignUp } from "../cmps/Header/User/SignUp";
 
 function _UserLogin({ signingUp, signingIn, history }) {
 	const [isSubmitting, setIsSubmitting] = useState(false);
-	
+
 	if (isSubmitting) return <Loader />;
 	return (
-		<section style={{ marginBlockStart: "140px",marginBlockEnd: "60px" }}>
+		<section className='log-sign-section' style={{ marginBlockStart: "140px", marginBlockEnd: "60px" }}>
 			<Switch>
 				<Route component={() => <LogIn setIsSubmitting={setIsSubmitting} signingIn={signingIn} history={history} />} path='/user/login' />
 				<Route component={() => <SignUp setIsSubmitting={setIsSubmitting} signingUp={signingUp} history={history} />} path='/user/signup' />
