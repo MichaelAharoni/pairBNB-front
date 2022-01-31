@@ -121,7 +121,7 @@ export function _BackOffice({ stays, loadStays }) {
 				</TabPanel>
 				<TabPanel value={2}>{hostStays.length ? <StayList fromBackOffice={true} staysToShow={hostStays} /> : <div>You are not a host</div>}</TabPanel>
 				<TabPanel value={loggedInUser.isHost ? 3 : 1}>
-					{likedStays.length ? <StayList fromBackOffice={false} staysToShow={likedStays} /> : <div className='no-stay-liked'>You didnt like any stay yet</div>}
+					{likedStays.length ? <StayList fromBackOffice={false} staysToShow={likedStays} /> : <div className='no-stay-liked'>You didnt like any stays yet</div>}
 				</TabPanel>
 				<TabPanel value={4}>{loggedInUser.isHost && <AddStay />}</TabPanel>
 			</TabsUnstyled>
