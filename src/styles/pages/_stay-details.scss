@@ -270,6 +270,12 @@
 	}
 }
 
+.MuiDialogActions-spacing,
+.css-1ay6ak0-MuiDialogActions-root,
+.css-1ay6ak0-MuiDialogActions-root {
+	display: none !important;
+}
+
 .details-header-after-checkout {
 	position: fixed;
 	top: 0;
@@ -390,6 +396,7 @@
 			align-items: center;
 			justify-content: center;
 			margin-bottom: 5px;
+			flex-wrap: wrap;
 		}
 		.dot-before-reviews,
 		.dot-before-address {
