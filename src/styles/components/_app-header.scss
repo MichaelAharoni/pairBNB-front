@@ -113,8 +113,7 @@
 }
 
 .mobile-screen.screen-open {
-	background-color: green;
-	opacity: 20%;
+	opacity: 0%;
 	position: fixed;
 	height: 100vh;
 	width: 100vw;
@@ -194,6 +193,13 @@
 		top: 0;
 	}
 	.logo {
-		width: 55px;
+		width: 50px;
+	}
+}
+
+@media screen and (max-width:410px) {
+	.logo {
+		margin-block-start: 3px;
+		font-size: 20px;
 	}
 }
