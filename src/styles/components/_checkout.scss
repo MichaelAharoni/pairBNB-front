@@ -234,6 +234,9 @@
 		width: 33px;
 		height: 33px;
 		margin-inline-end: 2px;
+		&.active-mode {
+			margin-inline-end: 5px;
+		}
 	}
 	.content {
 		border-radius: 25px;
@@ -376,9 +379,26 @@
 }
 
 @media screen and (max-width: 780px) {
-	.special-btn .order-container {
+	.special-btn  .order-container {
 		width: 100%;
 		margin: 0;
 		margin-bottom: 30px;
+	}
+	.search-special-btn {
+		.btn-container {
+			margin-inline-end: 5px;
+			&.active-mode {
+				margin-inline-end: 2px;
+				margin-block-start: 0;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.search-special-btn {
+		.btn-container {
+			margin-inline-end: 2px;
+		}
 	}
 }

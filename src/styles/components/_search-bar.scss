@@ -3,6 +3,9 @@
 }
 
 .bar {
+	& .search-special-btn .btn-container {
+		margin-block-start: 1px;
+	}
 	border: 2px solid $clr5;
 	width: 850px;
 	background: $clr2;
@@ -186,11 +189,13 @@ input[type="text"]:focus {
 	width: 100%;
 	border-radius: 20px;
 	padding: 0 20px 10px;
-	// transition: opacity 0.5s;
-	// opacity: 0;
 }
 
 @media screen and (max-width: 1040px) {
+	.search-bar-date-picker {
+		left: 7%;
+	}
+
 	.bar {
 		position: fixed;
 		left: 50%;
@@ -214,6 +219,12 @@ input[type="text"]:focus {
 
 @media screen and (max-width: 780px) {
 	.bar {
+		& .location-describtion {
+			display: none;
+		}
+		.location-txt {
+			visibility: hidden;
+		}
 		margin-block-start: 15px;
 		&.active-search-bar .special-btn img {
 			width: 25px;
@@ -234,12 +245,12 @@ input[type="text"]:focus {
 			}
 			.special-btn {
 				margin-block-end: 20px;
-				transform: translateY(-30%);
+				transform: translate(-4%,-20%)
 			}
 		}
 	}
 	.mobile-header .bar {
-		height: inherit;
+		height: 53px;
 		& .special-btn .content {
 			transform: translate(15%,-5%);
 		}
@@ -275,11 +286,5 @@ input[type="text"]:focus {
 	}
 	.location-txt {
 		visibility: hidden;
-	}
-}
-
-@media screen and (max-width: 1040px) {
-	.search-bar-date-picker {
-		left: 7%;
 	}
 }
