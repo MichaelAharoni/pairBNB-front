@@ -204,8 +204,9 @@
 		z-index: 6;
 	}
 	.home .host a button {
-		margin-bottom: 10px;
-		width: 40%;
+		margin: 0;
+		width: 37%;
+		padding: 10px 0;
 		box-shadow: 0px 0px 20px -2px #000000;
 	}
 
@@ -214,12 +215,14 @@
 	}
 }
 
-@media screen and (max-width:780px) {
+@media screen and (max-width: 780px) {
 	.home-btn {
 		width: 53%;
 		height: 90%;
-
-	}	
+	}
+	.footer-content {
+		gap: 20px;
+	}
 }
 
 @media screen and (max-width: 400px) {
