@@ -131,13 +131,18 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-block-end: 10px;
+    padding-block-end: 40px;
     p {
       margin: 0;
     }
     button {
       width: 85vw;
     }
+  }
+  .search-input {
+    position: fixed;
+    top: 12px;
+    left: 7%;
   }
 }
 
@@ -149,11 +154,7 @@
       width: 75vw;
     }
   }
-  .search-input {
-    position: fixed;
-    top: 22px;
-    left: 7%;
-  }
+
   .data-result {
     position: fixed;
     max-width: 100%;

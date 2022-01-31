@@ -75,7 +75,7 @@ export function Checkout({ stay, avg }) {
 	}
 
 	return (
-		<main className='special-btn checkout-container'>
+		<main id='checkout' className='special-btn checkout-container'>
 			{isGuestsActive && <div onClick={() => toggleGuests()} className='guest-screen'></div>}
 			<section className='order-container'>
 				<div className='order-form-header'>

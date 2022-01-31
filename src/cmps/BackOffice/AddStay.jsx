@@ -63,7 +63,7 @@ const amenities = [
 	"Coffee maker",
 	"Cooking basics",
 	"Dedicated workspace",
-	'Dishes and silverware"',
+	"Dishes and silverware",
 	"Dishwasher",
 ];
 
@@ -123,7 +123,7 @@ export function AddStay() {
 	const handleChangeSpaceType = (event) => {
 		setSpaceType(event.target.value);
 	};
-	
+
 	const handleChangeDescription = (event) => {
 		setStayDescription(event.target.value);
 	};
@@ -144,7 +144,7 @@ export function AddStay() {
 		let stay = { stayName, stayAdress, stayCapacity, stayPrice, placeType, spaceType, stayDescription, stayAmenities, stayImgs };
 		stayService.save(stay);
 		const user = userService.getLoggedinUser();
-		userService.setLoggedinUser({ ...user, isHost: true })
+		userService.setLoggedinUser({ ...user, isHost: true });
 	}
 
 	return (

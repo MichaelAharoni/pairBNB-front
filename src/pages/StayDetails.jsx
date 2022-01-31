@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
@@ -10,6 +10,7 @@ import { Review } from "../cmps/Details/Review";
 import { AddReview } from "../cmps/Details/AddReview";
 import { ReviewStats } from "../cmps/Details/ReviewsStats.jsx";
 import ImageCarousel from "../cmps/Explore/ImageCarousel";
+import { SpecialBtn } from "../cmps/General/SpecialBtn";
 
 import { stayService } from "../services/stay.service";
 import { userService } from "../services/user.service";
@@ -28,9 +29,13 @@ function _StayDetails({ toggleDetailsLayout }) {
 	const params = useParams();
 	const [stay, setStay] = useState(null);
 	const [avg, setAvg] = useState(0);
+	const [isAfterPhotos, setIsAfterCheckout] = useState(false);
+	const [isAfterCheckout, setisAfterCheckout] = useState(false);
 	const [currUser, setCurrUser] = useState(userService.getLoggedinUser());
 	const isUserLikeCurrStay = currUser?.likedStays?.some((currStay) => currStay._id === stay?._id);
 	const dispatch = useDispatch();
+	const changedHeader = useRef();
+	const afterCheckout = useRef();
 
 	useEffect(() => {
 		(async () => {
@@ -38,11 +43,26 @@ function _StayDetails({ toggleDetailsLayout }) {
 			getAvgRating(stayByid);
 			setStay(stayByid);
 			toggleDetailsLayout(true);
+			window.addEventListener("scroll", changeHeader);
 		})();
 		return () => {
+			window.removeEventListener("scroll", changeHeader);
 			toggleDetailsLayout(false);
 		};
 	}, []);
+
+	function changeHeader() {
+		if (changedHeader.current.getBoundingClientRect().top <= 0) {
+			setIsAfterCheckout(true);
+		} else {
+			setIsAfterCheckout(false);
+		}
+		if (afterCheckout.current.getBoundingClientRect().top <= 130 || window.innerWidth < 780) {
+			setisAfterCheckout(true);
+		} else {
+			setisAfterCheckout(false);
+		}
+	}
 
 	async function onToggleLikedPlace(stay) {
 		let loggedinUser = userService.getLoggedinUser();
@@ -87,7 +107,9 @@ function _StayDetails({ toggleDetailsLayout }) {
 	return (
 		<main className='detail-layout main-container details-page'>
 			<div className='middle-layout'>
-				<h1 className='stay-name-details'>{stay.name}</h1>
+				<h1 id='photos' className='stay-name-details'>
+					{stay.name}
+				</h1>
 
 				<div className='stay-reviews-details'>
 					<div className='flex info-start'>
@@ -137,7 +159,7 @@ function _StayDetails({ toggleDetailsLayout }) {
 				)}
 				<div className='stay-info-container'>
 					<div className='stay-info'>
-						<div className='host-info flex'>
+						<div ref={changedHeader} className='host-info flex'>
 							<div>
 								<h2>
 									{stay.type} hosted by <span className='host-name'>{stay.host.fullName}</span>
@@ -180,7 +202,7 @@ function _StayDetails({ toggleDetailsLayout }) {
 					</div>
 					<Checkout avg={avg} stay={stay} />
 				</div>
-				<div id='reviews' className='reviews-header flex'>
+				<div ref={afterCheckout} id='reviews' className='reviews-header flex'>
 					<img src={reviewStar} />
 					<span>{avg}</span>
 					<div>({stay.reviews.length * 4} Reviews)</div>
@@ -196,6 +218,42 @@ function _StayDetails({ toggleDetailsLayout }) {
 				<AddReview stay={stay} set={setStay} />
 				<Map lat={stay.loc.lat} lng={stay.loc.lng} name={stay.name} country={stay.loc.country} address={stay.loc.address} />
 			</div>
+
+			{isAfterPhotos && (
+				<div className='detail-layout details-header-after-checkout'>
+					<div className=' flex'>
+						<div className='details-heaader-nav flex'>
+							<a href='#photos'>Photos</a>
+							<a href='#amenities'>Amenities</a>
+							<a href='#reviews'>Reviews</a>
+							<a href='#map'>Location</a>
+						</div>
+						{isAfterCheckout && (
+							<div className='is-after-checkout flex'>
+								<div>
+									<p className='details-header-price'>
+										<span>${stay.price}</span> / night
+									</p>
+									<p className='details-header-reviews'>
+										<span>
+											<img className='star-checkout' src={reviewStar} />
+										</span>
+										<span> {avg} · </span>
+										<a href='#reviews' className='reviews'>
+											{stay.reviews.length * 4} reviews
+										</a>
+									</p>
+								</div>
+								<div className='special-btn'>
+									<a href={window.innerWidth > 780 ? "#amenities" : "#checkout"}>
+										<SpecialBtn size={{ width: "180px", height: "50px" }} text={"Check availability"} />
+									</a>
+								</div>
+							</div>
+						)}
+					</div>
+				</div>
+			)}
 		</main>
 	);
 }

@@ -1,9 +1,9 @@
 .user-modal-container {
   transition: 0.3s;
   top: 256%;
-    &.active-modal {
-        top: 110.6%;
-    }
+  &.active-modal {
+    top: 110.6%;
+  }
   box-shadow: 3px 2px 3px $clr5;
   overflow: hidden;
   background-color: #fff;
@@ -69,9 +69,18 @@
     right: 8%;
     top: 6%;
     border: 1px solid $clr3;
-    }
+  }
 }
 
 .detail-layout .user-modal-container {
-left: 73.1%;
+  left: 73.1%;
+}
+
+@media screen and (max-width: 780px) {
+  .user-modal-container {
+    right: -25%;
+    &.active-modal {
+      top: 256%;
+    }
+  }
 }

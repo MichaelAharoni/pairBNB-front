@@ -96,12 +96,12 @@ export function Amenities({ amenities }) {
 	}
 
 	return (
-		<div>
+		<div id='amenities'>
 			<h1 className='amenities-list-header'>What this place offers</h1>
 			<ul className='amenities-list'>
 				{labels.map((amenitie) => {
 					return (
-						<li className='amenitie-item' key={amenitie}>
+						<li key={amenitie} className='amenitie-item'>
 							<img className='amenitie' src={urls[fixAmenitie(amenitie)]} />
 							<span>{amenitie}</span>
 						</li>
@@ -109,7 +109,7 @@ export function Amenities({ amenities }) {
 				})}
 				{NotIncluded.map((amenitie) => {
 					return (
-						<li key={amenitie} className='amenitie-item not-included'>
+						<li key={amenitie + "1"} className='amenitie-item not-included'>
 							<img className='amenitie' src={urls[fixAmenitie(amenitie)]} />
 							{amenitie}
 						</li>

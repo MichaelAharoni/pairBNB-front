@@ -14,13 +14,14 @@ import airLogoSvg from "../../styles/svg/air-logo.svg";
 import airTopLogoSvg from "../../styles/svg/air-dark-logo.svg";
 import userSvg from "../../styles/svg/user.svg";
 import hamburgerSvg from "../../styles/svg/hamburger.svg";
+import whiteHamburgerSvg from "../../styles/svg/white-hamburger.svg";
 import { UserMsg } from "../../cmps/General/UserMsg";
 
 function _AppHeader({ toggleDetailsLayout, toggleHeaderIsTop, toggleIsExplore, toggleHeaderIsActive, headerMode }) {
 	const { headerLayoutSmall, isTop, isActive, isExplore } = headerMode;
 	const userIsHost = userService.getLoggedinUser()?.isHost || false;
-	// const [userModalState, toggleModal] = useState(false);
 	const [isScreenOpen, setIsScreenOpen] = useState(false);
+	const [isMobileScreenOpen, setIsMobileScreenOpen] = useState(false);
 	const [isSearchBarOpen, setIsSearchBarOpen] = useState(false);
 	const [isUserModalScreenOpen, setIsUserModalScreenOpen] = useState(false);
 	const [searchBarTabs, setSearchBarTabsActive] = useState(null);
@@ -41,6 +42,7 @@ function _AppHeader({ toggleDetailsLayout, toggleHeaderIsTop, toggleIsExplore, t
 
 	function resetHeaderModes() {
 		setIsUserModalScreenOpen(false)
+		handleMobileScreen();
 		if (history.location.pathname !== "/") return toggleIsExplore(true);
 		if (isExplore) return;
 		if (window.scrollY <= 1) {
@@ -86,6 +88,10 @@ function _AppHeader({ toggleDetailsLayout, toggleHeaderIsTop, toggleIsExplore, t
 		toggleHeaderIsTop((isUserModalScreenOpen && !isExplore));
 	}
 
+	function handleMobileScreen() {
+		setIsMobileScreenOpen(false);
+	}
+
 	useEffect(() => {
 		if (!location.pathname || location.pathname === "/") {
 			toggleHeaderIsActive(false);
@@ -113,13 +119,14 @@ function _AppHeader({ toggleDetailsLayout, toggleHeaderIsTop, toggleIsExplore, t
 
 	return (
 		<header
-			className={`app-header column ${isExplore ? "explore-header" : ""} ${isActive ? "active-header" : ""} ${isTop ? "top-header" : ""} header-layout ${headerLayoutSmall ? "detail-layout" : "main-layout"
+			className={`app-header column ${isMobileWidth ? "mobile-header" : ""} ${isExplore ? "explore-header" : ""} ${isActive ? "active-header" : ""} ${isTop ? "top-header" : ""} header-layout ${headerLayoutSmall ? "detail-layout" : "main-layout"
 				}`}>
 			<div onClick={handleSearchModals} className={isScreenOpen ? "screen screen-open full-layout" : "screen full-layout"}></div>
 			<div onClick={handleCloseSearchBar} className={isSearchBarOpen ? "screen screen-open search-bar-screen full-layout" : "search-bar-screen  screen full-layout"}></div>
 			<div onClick={handleUserModal} className={isUserModalScreenOpen ? "screen screen-open user-modal-screen full-layout" : "screen user-modal-screen full-layout"}></div>
+			<div onClick={handleMobileScreen} className={isMobileScreenOpen ? "screen screen-open mobile-screen full-layout" : "screen mobile-screen full-layout"}></div>
 			{isUserModalScreenOpen && <UserModal handleUserModal={handleUserModal}  resetHeaderModes={resetHeaderModes}  />}
-			<section className='short-search-bar middle-layout'>
+			{((!isMobileWidth) || (isMobileWidth && !isMobileScreenOpen)) && <section className='short-search-bar middle-layout'>
 				<Link to={`/`}>
 					<span className='logo'>
 						P{isTop ? <img src={airTopLogoSvg} className='air-logo' alt='' /> : <img src={airLogoSvg} className='air-logo' alt='' />}I<span className='logo-r'>R</span>
@@ -127,20 +134,24 @@ function _AppHeader({ toggleDetailsLayout, toggleHeaderIsTop, toggleIsExplore, t
 					</span>
 				</Link>
 
-				{!isActive && <Search isSearchBarOpen={isSearchBarOpen} setIsSearchBarOpen={setIsSearchBarOpen} onToggleIsActive={onToggleIsActive} />}
+				{(!isActive || (isMobileWidth && !isMobileScreenOpen)) && <Search isMobileWidth={isMobileWidth} isSearchBarOpen={isSearchBarOpen} setIsMobileScreenOpen={setIsMobileScreenOpen} setIsSearchBarOpen={setIsSearchBarOpen} onToggleIsActive={onToggleIsActive} />}
 				<article className='nav-link'>
+					<div className="link-container">
 					<Link to={`/explore`}> Explore</Link>
 					<Link className='become' to={userIsHost ? "/host" : "/"}>
 						{userIsHost ? "My Stays" : "Become a Host"}
 					</Link>
+					</div>
+					{isMobileWidth ? <img onClick={()=>setIsUserModalScreenOpen(true)} className='hamburger-svg main-mobile-menu-modal' src={isTop ? whiteHamburgerSvg : hamburgerSvg} /> : 
 					<button onClick={handleUserModal} className='user-menu'>
 						<UserNotification />
 						<img className='hamburger-svg' src={hamburgerSvg} />
 						<img className='user-svg' src={img} />
 					</button>
+					}
 				</article>
-			</section>
-			<nav className='middle-layout search-bar-container'>
+			</section>}
+			{((!isMobileWidth || isMobileScreenOpen)) && <nav className='middle-layout search-bar-container'>
 				{(isActive || isMobileWidth) && (
 					<SearchBar
 						handleSearchBarTabs={handleSearchBarTabs}
@@ -153,7 +164,7 @@ function _AppHeader({ toggleDetailsLayout, toggleHeaderIsTop, toggleIsExplore, t
 						ToggleIsActive={onToggleIsActive}
 					/>
 				)}
-			</nav>
+			</nav>}
 			<UserMsg />
 		</header>
 	);

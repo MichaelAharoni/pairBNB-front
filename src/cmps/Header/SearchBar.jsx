@@ -70,7 +70,9 @@ function _SearchBar({ searchBarTabs, handleSearchBarTabs, setSearchBarTabsActive
 
 	return (
 		<div className={"bar original " + ((searchBarTabs || (!isTop && isMobileWidth)) && "active-search-bar")}>
-			{isScreenOpen && (searchBarTabs === "check-in" || searchBarTabs === "check-out") && <SearchBarDatePicker searchBarTabs={searchBarTabs} updateHeaderActiveTab={updateHeaderActiveTab} ChooseDates={ChooseDates} />}
+			{isScreenOpen && (searchBarTabs === "check-in" || searchBarTabs === "check-out") && (
+				<SearchBarDatePicker searchBarTabs={searchBarTabs} updateHeaderActiveTab={updateHeaderActiveTab} ChooseDates={ChooseDates} />
+			)}
 			<div onClick={(ev) => updateHeaderActiveTab("location", ev)} className={"location original " + (searchBarTabs === "location" && !isMobileWidth ? "active" : "")}>
 				<p className='location-txt'>Location</p>
 				<SearchBarFilterInput
@@ -95,7 +97,7 @@ function _SearchBar({ searchBarTabs, handleSearchBarTabs, setSearchBarTabsActive
 				<input className='bar-input' readOnly type='text' placeholder={searchParams.checkOut ? searchParams.checkOut : "Add dates"} />
 			</div>
 			<hr />
-			<div onClick={(ev) => updateHeaderActiveTab("guests", ev)} className={"guests original " + ((searchBarTabs === "guests" && !isMobileWidth) ? "active" : "")}>
+			<div onClick={(ev) => updateHeaderActiveTab("guests", ev)} className={"guests original " + (searchBarTabs === "guests" && !isMobileWidth ? "active" : "")}>
 				<p>Guests</p>
 				{searchBarTabs === "guests" && (
 					<div className='header-guests'>
@@ -108,7 +110,7 @@ function _SearchBar({ searchBarTabs, handleSearchBarTabs, setSearchBarTabsActive
 						onClick={onSearch}
 						args={searchParams}
 						isActive={searchBarTabs}
-						size={{ width: "50px", height: "50px" }}
+						size={isMobileWidth ? { width: "40px", height: "40px" } : { width: "50px", height: "50px" }}
 						text={<img src={searchSvg} className='search-svg' alt='' />}
 					/>
 				</div>
@@ -124,8 +126,8 @@ function mapStateToProps({ headerModule, stayModule }) {
 	};
 }
 const mapDispatchToProps = {
-	toggleDetailsLayout,
-	toggleHeaderIsActive,
+	// toggleDetailsLayout,
+	// toggleHeaderIsActive,
 	setParams,
 };
 
