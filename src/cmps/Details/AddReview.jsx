@@ -12,10 +12,9 @@ import StarIcon from "@mui/icons-material/Star";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import userSvg from "../../styles/svg/user.svg";
-
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 export function AddReview({ stay, set }) {
 	const dispatch = useDispatch();
@@ -41,6 +40,7 @@ export function AddReview({ stay, set }) {
 		newStay.reviews.unshift(newReview);
 		await stayService.update(newStay);
 		set({ ...newStay });
+
 		dispatch(openMsg({ txt: "Review added", type: "bnb" }));
 	}
 
@@ -76,9 +76,11 @@ export function AddReview({ stay, set }) {
 			</div>
 			<div className='add-review-btn'>
 				<ThemeProvider theme={btnTheme}>
-					<Button onClick={addReview} variant='outlined' endIcon={<SendIcon />}>
-						Add Review
-					</Button>
+					<a href='#reviews'>
+						<Button onClick={addReview} variant='outlined' endIcon={<SendIcon />}>
+							Add Review
+						</Button>
+					</a>
 				</ThemeProvider>
 			</div>
 		</div>
@@ -103,7 +105,7 @@ function RatingBar(type, idx, value, setValue) {
 				onChange={() => {
 					setnewValue();
 				}}
-				onChangeActive={(newHover) => {
+				onChangeActive={(ev, newHover) => {
 					setHover(newHover);
 				}}
 				emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize='inherit' />}

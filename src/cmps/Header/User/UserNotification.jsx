@@ -30,5 +30,5 @@ export function UserNotification() {
 		disptach(updateUserNotifications(updatedUser.notifications));
 		disptach(openMsg({ txt: response.msg, type: "bnb" }));
 	}
-	return notificationsAmount ? <div className='user-notifications-dot'>{notificationsAmount}</div> : <React.Fragment></React.Fragment>;
+	return notificationsAmount ? <div className='user-notifications-dot'>{notificationsAmount}</div> : <></>;
 }
