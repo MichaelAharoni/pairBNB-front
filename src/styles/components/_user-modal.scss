@@ -1,86 +1,118 @@
 .user-modal-container {
-  transition: 0.3s;
-  top: 256%;
-  &.active-modal {
-    top: 110.6%;
-  }
-  box-shadow: 3px 2px 3px $clr5;
-  overflow: hidden;
-  background-color: #fff;
-  position: absolute;
-  height: 240px;
-  width: 240px;
-  border-radius: 20px;
-  right: -2%;
-  transform: translate(-50%, -50%);
-  & ul {
-    height: 100%;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
-  & li {
-    padding-inline-start: 15px;
-    padding-block-end: 5px;
-    padding-block-start: 5px;
-    &:not(:first-of-type) {
-      font-weight: 300;
-    }
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    cursor: pointer;
-    &:hover {
-      background: $clr4;
-    }
-  }
-  .user-modal-screen {
-    position: fixed;
-    opacity: 30%;
-    height: 100vh;
-    width: 100vw;
-  }
-  & .user-modal-span {
-    color: $clr3;
-    width: 100%;
-    height: 100%;
-    display: inline-block;
-    &:hover {
-      background-color: $clr4;
-    }
-  }
-  & hr {
-    border-width: 0.1px;
-    opacity: 30%;
-  }
-  .user-notifications-dot {
-    background-color: $clr1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    height: 25px;
-    width: 25px;
-    padding-inline-end: 2px;
-    padding-block-end: 2px;
-    border-radius: 50%;
-    color: $clr2;
-    right: 8%;
-    top: 6%;
-    border: 1px solid $clr3;
-  }
+	transition: 0.3s;
+	top: 256%;
+	&.active-modal {
+		top: 110.6%;
+	}
+	box-shadow: 3px 2px 3px $clr5;
+	overflow: hidden;
+	background-color: #fff;
+	position: absolute;
+	height: 240px;
+	width: 240px;
+	border-radius: 20px;
+	right: -2%;
+	transform: translate(-50%, -50%);
+	& ul {
+		height: 100%;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+	}
+	& li {
+		padding-inline-start: 15px;
+		padding-block-end: 5px;
+		padding-block-start: 5px;
+		&:not(:first-of-type) {
+			font-weight: 300;
+		}
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+		cursor: pointer;
+		&:hover {
+			background: $clr4;
+		}
+	}
+	.user-modal-screen {
+		position: fixed;
+		opacity: 30%;
+		height: 100vh;
+		width: 100vw;
+	}
+	& .user-modal-span {
+		color: $clr3;
+		width: 100%;
+		height: 100%;
+		display: inline-block;
+		&:hover {
+			background-color: $clr4;
+		}
+	}
+	& hr {
+		border-width: 0.1px;
+		opacity: 30%;
+	}
+	.user-notifications-dot {
+		background-color: $clr1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		height: 25px;
+		width: 25px;
+		padding-inline-end: 2px;
+		padding-block-end: 2px;
+		border-radius: 50%;
+		color: $clr2;
+		right: 8%;
+		top: 6%;
+		border: 1px solid $clr3;
+	}
 }
 
 .detail-layout .user-modal-container {
-  left: 73.1%;
+	left: 73.1%;
+}
+
+@media screen and (max-width: 1700px) {
+	.detail-layout .user-modal-container {
+		left: 77.1%;
+	}
+}
+@media screen and (max-width: 1570px) {
+	.detail-layout .user-modal-container {
+		left: 79%;
+	}
+}
+
+@media screen and (max-width: 1450px) {
+	.detail-layout .user-modal-container {
+		left: 81.5%;
+	}
+}
+@media screen and (max-width: 1000px) {
+	.detail-layout .user-modal-container {
+		left: 79.2%;
+	}
+}
+@media screen and (max-width: 850px) {
+	.detail-layout .user-modal-container {
+		left: 75.7%;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.detail-layout .user-modal-container {
+		left: 68.7%;
+	}
 }
 
 @media screen and (max-width: 780px) {
-  .user-modal-container {
-    right: -25%;
-    &.active-modal {
-      top: 256%;
-    }
-  }
+	.user-modal-container {
+		right: -25%;
+		&.active-modal {
+			top: 256%;
+		}
+	}
 }

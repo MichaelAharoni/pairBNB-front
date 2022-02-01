@@ -219,8 +219,13 @@
 }
 
 .MuiPaper-root {
-	background-color: transparent !important;
+	background-color: rgba(255, 255, 255, 0.452);
 	box-shadow: unset !important;
+}
+.add-stay-container {
+	.MuiPaper-root {
+		box-shadow: inherit !important;
+	}
 }
 .date-picker-checkout {
 	border-radius: 25px;
@@ -379,7 +384,7 @@
 }
 
 @media screen and (max-width: 780px) {
-	.special-btn  .order-container {
+	.special-btn .order-container {
 		width: 100%;
 		margin: 0;
 		margin-bottom: 30px;

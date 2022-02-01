@@ -87,11 +87,14 @@ export function _BackOffice({ stays, loadStays }) {
 	let loggedInUser = userService.getLoggedinUser();
 
 	useEffect(async () => {
+		if (!loggedInUser) return;
 		let stays = await stayService.query();
 		let currUserLikesStays = [];
 		loggedInUser.likedStays.forEach((stay) => {
-			const found = stays.find((currStay) => currStay._id === stay._id);
-			if (found !== 1) currUserLikesStays.push(found);
+			if (stay) {
+				const found = stays.find((currStay) => currStay._id === stay._id);
+				if (found !== 1) currUserLikesStays.push(found);
+			}
 		});
 		setLikedStays(currUserLikesStays);
 		if (loggedInUser.isHost) {
@@ -102,8 +105,9 @@ export function _BackOffice({ stays, loadStays }) {
 	}, []);
 
 	if (!loggedInUser) {
+		history.push("/");
 		dispatch(openMsg({ txt: "Log in first", type: "bnb" }));
-		return <React.Fragment> {history.push("/")}</React.Fragment>;
+		return <React.Fragment></React.Fragment>;
 	}
 	return (
 		<div className='main-layout main-container'>

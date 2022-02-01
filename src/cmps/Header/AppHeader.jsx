@@ -41,7 +41,7 @@ function _AppHeader({ toggleDetailsLayout, toggleHeaderIsTop, toggleIsExplore, t
 	}
 
 	function resetHeaderModes() {
-		setIsUserModalScreenOpen(false)
+		setIsUserModalScreenOpen(false);
 		handleMobileScreen();
 		if (history.location.pathname !== "/") return toggleIsExplore(true);
 		if (isExplore) return;
@@ -84,8 +84,8 @@ function _AppHeader({ toggleDetailsLayout, toggleHeaderIsTop, toggleIsExplore, t
 
 	function handleUserModal() {
 		setIsUserModalScreenOpen(!isUserModalScreenOpen);
-		toggleHeaderIsActive((isUserModalScreenOpen && !isExplore));
-		toggleHeaderIsTop((isUserModalScreenOpen && !isExplore));
+		toggleHeaderIsActive(isUserModalScreenOpen && !isExplore);
+		toggleHeaderIsTop(isUserModalScreenOpen && !isExplore);
 	}
 
 	function handleMobileScreen() {
@@ -121,52 +121,67 @@ function _AppHeader({ toggleDetailsLayout, toggleHeaderIsTop, toggleIsExplore, t
 
 	return (
 		<header
-			className={`app-header column ${isMobileWidth ? "mobile-header" : ""} ${isExplore ? "explore-header" : ""} ${isActive ? "active-header" : ""} ${isTop ? "top-header" : ""} header-layout ${headerLayoutSmall ? "detail-layout" : "main-layout"
-				}`}>
+			className={`app-header column ${isMobileWidth ? "mobile-header" : ""} ${isExplore ? "explore-header" : ""} ${isActive ? "active-header" : ""} ${
+				isTop ? "top-header" : ""
+			} header-layout ${headerLayoutSmall ? "detail-layout" : "main-layout"}`}>
 			<div onClick={handleSearchModals} className={isScreenOpen ? "screen screen-open full-layout" : "screen full-layout"}></div>
 			<div onClick={handleCloseSearchBar} className={isSearchBarOpen ? "screen screen-open search-bar-screen full-layout" : "search-bar-screen  screen full-layout"}></div>
 			<div onClick={handleUserModal} className={isUserModalScreenOpen ? "screen screen-open user-modal-screen full-layout" : "screen user-modal-screen full-layout"}></div>
 			<div onClick={handleMobileScreen} className={isMobileScreenOpen ? "screen screen-open mobile-screen full-layout" : "screen mobile-screen full-layout"}></div>
-			{isUserModalScreenOpen && <UserModal handleUserModal={handleUserModal}  resetHeaderModes={resetHeaderModes}  />}
-			{((!isMobileWidth) || (isMobileWidth && !isMobileScreenOpen)) && <section className='short-search-bar middle-layout'>
-				<Link to={`/`}>
-					<span className='logo'>
-						P{isTop ? <img src={airTopLogoSvg} className='air-logo' alt='' /> : <img src={airLogoSvg} className='air-logo' alt='' />}I<span className='logo-r'>R</span>
-						BNB
-					</span>
-				</Link>
-
-				{(!isActive || (isMobileWidth && !isMobileScreenOpen)) && <Search isMobileWidth={isMobileWidth} isSearchBarOpen={isSearchBarOpen} setIsMobileScreenOpen={setIsMobileScreenOpen} setIsSearchBarOpen={setIsSearchBarOpen} onToggleIsActive={onToggleIsActive} />}
-				<article className='nav-link'>
-					<div className="link-container">
-					<Link to={`/explore`}> Explore</Link>
-					<Link className='become' to={userIsHost ? "/host" : "/"}>
-						{userIsHost ? "My Stays" : "Become a Host"}
+			{isUserModalScreenOpen && <UserModal handleUserModal={handleUserModal} resetHeaderModes={resetHeaderModes} />}
+			{(!isMobileWidth || (isMobileWidth && !isMobileScreenOpen)) && (
+				<section className='short-search-bar middle-layout'>
+					<Link to={`/`}>
+						<span className='logo'>
+							P{isTop ? <img src={airTopLogoSvg} className='air-logo' alt='' /> : <img src={airLogoSvg} className='air-logo' alt='' />}I<span className='logo-r'>R</span>
+							BNB
+						</span>
 					</Link>
-					</div>
-					{isMobileWidth ? <img onClick={()=>setIsUserModalScreenOpen(true)} className='hamburger-svg main-mobile-menu-modal' src={isTop ? whiteHamburgerSvg : hamburgerSvg} /> : 
-					<button onClick={handleUserModal} className='user-menu'>
-						<UserNotification />
-						<img className='hamburger-svg' src={hamburgerSvg} />
-						<img className='user-svg' src={img} />
-					</button>
-					}
-				</article>
-			</section>}
-			{((!isMobileWidth || isMobileScreenOpen)) && <nav className='middle-layout search-bar-container'>
-				{(isActive || isMobileWidth) && (
-					<SearchBar
-						handleSearchBarTabs={handleSearchBarTabs}
-						setSearchBarTabsActive={setSearchBarTabsActive}
-						searchBarTabs={searchBarTabs}
-						isScreenOpen={isScreenOpen}
-						isMobileWidth={isMobileWidth}
-						isTop={isTop}
-						setIsScreenOpen={setIsScreenOpen}
-						ToggleIsActive={onToggleIsActive}
-					/>
-				)}
-			</nav>}
+
+					{(!isActive || (isMobileWidth && !isMobileScreenOpen)) && (
+						<Search
+							isMobileWidth={isMobileWidth}
+							isSearchBarOpen={isSearchBarOpen}
+							setIsMobileScreenOpen={setIsMobileScreenOpen}
+							setIsSearchBarOpen={setIsSearchBarOpen}
+							onToggleIsActive={onToggleIsActive}
+						/>
+					)}
+					<article className='nav-link'>
+						<div className='link-container'>
+							<Link to={`/explore`}> Explore</Link>
+							<Link className='become' to={userIsHost ? "/host" : "/"}>
+								{userIsHost ? "My Stays" : "Become a Host"}
+							</Link>
+						</div>
+						{isMobileWidth ? (
+							<img onClick={() => setIsUserModalScreenOpen(true)} className='hamburger-svg main-mobile-menu-modal' src={isTop ? whiteHamburgerSvg : hamburgerSvg} />
+						) : (
+							<button onClick={handleUserModal} className='user-menu'>
+								<UserNotification />
+								<img className='hamburger-svg' src={hamburgerSvg} />
+								<img className='user-svg' src={img} />
+							</button>
+						)}
+					</article>
+				</section>
+			)}
+			{(!isMobileWidth || isMobileScreenOpen) && (
+				<nav className='middle-layout search-bar-container'>
+					{(isActive || isMobileWidth) && (
+						<SearchBar
+							handleSearchBarTabs={handleSearchBarTabs}
+							setSearchBarTabsActive={setSearchBarTabsActive}
+							searchBarTabs={searchBarTabs}
+							isScreenOpen={isScreenOpen}
+							isMobileWidth={isMobileWidth}
+							isTop={isTop}
+							setIsScreenOpen={setIsScreenOpen}
+							ToggleIsActive={onToggleIsActive}
+						/>
+					)}
+				</nav>
+			)}
 			<UserMsg />
 		</header>
 	);
